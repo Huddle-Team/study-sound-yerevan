@@ -137,11 +137,17 @@ const BookingForm = () => {
                       <SelectValue placeholder="Select gear" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="noise-cancelling">Noise-Cancelling</SelectItem>
+                      <SelectItem value="noise-cancelling">Noise-Cancelling Headphones</SelectItem>
                       <SelectItem value="studio">Studio Headphones</SelectItem>
                       <SelectItem value="usb-headset">USB Headset</SelectItem>
                       <SelectItem value="earbuds">Earbuds</SelectItem>
-                      <SelectItem value="refurbished">Refurbished</SelectItem>
+                      <SelectItem value="dslr-camera">DSLR Camera</SelectItem>
+                      <SelectItem value="action-camera">Action Camera</SelectItem>
+                      <SelectItem value="webcam">Webcam HD</SelectItem>
+                      <SelectItem value="handheld-gps">Handheld GPS</SelectItem>
+                      <SelectItem value="car-gps">Car GPS Navigator</SelectItem>
+                      <SelectItem value="gps-watch">GPS Watch</SelectItem>
+                      <SelectItem value="refurbished">Refurbished Equipment</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

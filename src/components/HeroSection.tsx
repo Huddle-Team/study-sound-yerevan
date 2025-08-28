@@ -17,10 +17,10 @@ const HeroSection = () => {
         <div className="text-center lg:text-left space-y-8">
           <div className="space-y-4">
             <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              Rent or Buy <span className="text-primary">Headphones</span> for Study
+              Rent or Buy <span className="text-primary">Tech Equipment</span> for Study
             </h1>
             <p className="text-xl text-muted-foreground max-w-lg">
-              Affordable student audio gear in Yerevan—book with your name & phone, we'll call to confirm.
+              Headphones, cameras, GPS devices & more in Yerevan—book with your name & phone, we'll call to confirm.
             </p>
           </div>
 
