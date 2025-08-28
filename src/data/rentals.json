@@ -1,0 +1,245 @@
+{
+  "audioRentals": [
+    {
+      "id": 1,
+      "names": {
+        "en": "Noise-Cancelling Headphones",
+        "ru": "Наушники с шумоподавлением",
+        "hy": "Աղմուկ մարող ականջակալներ"
+      },
+      "descriptions": {
+        "en": "Perfect for libraries and focus sessions. Block out distractions.",
+        "ru": "Идеально для библиотек и сеансов концентрации. Блокируйте отвлекающие факторы.",
+        "hy": "Կատարյալ գրադարանների և կենտրոնացման աշխատանքների համար: Արգելափակեք ուշադրության շեղումները:"
+      },
+      "prices": {
+        "en": "From 3,000 AMD/day",
+        "ru": "От 3,000 драм/день",
+        "hy": "Սկսած 3,000 դրամ/օր"
+      },
+      "image": "/src/assets/noise-cancelling.jpg",
+      "features": {
+        "en": ["Active noise cancellation", "30+ hour battery", "Comfortable padding"],
+        "ru": ["Активное шумоподавление", "Батарея 30+ часов", "Удобные накладки"],
+        "hy": ["Ակտիվ աղմուկ մարում", "30+ ժամ մարտկոց", "Հարմարավետ պարկեր"]
+      },
+      "icon": "Headphones",
+      "category": "audio",
+      "gpsTracking": true
+    },
+    {
+      "id": 2,
+      "names": {
+        "en": "Studio Headphones",
+        "ru": "Студийные наушники",
+        "hy": "Ստուդիայի ականջակալներ"
+      },
+      "descriptions": {
+        "en": "Clean, neutral sound for editing and music practice.",
+        "ru": "Чистый, нейтральный звук для редактирования и музыкальной практики.",
+        "hy": "Մաքուր, չեզոք ձայն խմբագրման և երաժշտական պրակտիկայի համար:"
+      },
+      "prices": {
+        "en": "From 2,000 AMD/day",
+        "ru": "От 2,000 драм/день",
+        "hy": "Սկսած 2,000 դրամ/օր"
+      },
+      "image": "/src/assets/studio-headphones.jpg",
+      "features": {
+        "en": ["Flat frequency response", "Open-back design", "Professional grade"],
+        "ru": ["Плоская частотная характеристика", "Открытая конструкция", "Профессиональный уровень"],
+        "hy": ["Հարթ հաճախությունային բնութագիր", "Բաց դիզայն", "Պրոֆեսիոնալ որակ"]
+      },
+      "icon": "Volume2",
+      "category": "audio",
+      "gpsTracking": true
+    },
+    {
+      "id": 3,
+      "names": {
+        "en": "USB Headsets with Mic",
+        "ru": "USB-наушники с микрофоном",
+        "hy": "USB ականջակալներ բարձրախոսով"
+      },
+      "descriptions": {
+        "en": "Perfect for online classes, Zoom calls, and presentations.",
+        "ru": "Идеально для онлайн-уроков, Zoom-звонков и презентаций.",
+        "hy": "Կատարյալ օնլայն դասերի, Zoom զանգերի և ներկայացումների համար:"
+      },
+      "prices": {
+        "en": "From 1,500 AMD/day",
+        "ru": "От 1,500 драм/день",
+        "hy": "Սկսած 1,500 դրամ/օր"
+      },
+      "image": "/src/assets/usb-headset.jpg",
+      "features": {
+        "en": ["Clear microphone", "USB plug-and-play", "Noise cancelling mic"],
+        "ru": ["Четкий микрофон", "USB подключи и играй", "Микрофон с шумоподавлением"],
+        "hy": ["Մաքուր բարձրախոս", "USB միացրու և օգտագործիր", "Աղմուկ մարող բարձրախոս"]
+      },
+      "icon": "Mic",
+      "category": "audio",
+      "gpsTracking": true
+    }
+  ],
+  "cameraRentals": [
+    {
+      "id": 4,
+      "names": {
+        "en": "DSLR Camera",
+        "ru": "DSLR камера",
+        "hy": "DSLR ֆոտոապարատ"
+      },
+      "descriptions": {
+        "en": "Professional photography for projects and assignments.",
+        "ru": "Профессиональная фотография для проектов и заданий.",
+        "hy": "Պրոֆեսիոնալ ֆոտոգրաֆիա նախագծերի և առաջադրանքների համար:"
+      },
+      "prices": {
+        "en": "From 4,500 AMD/day",
+        "ru": "От 4,500 драм/день",
+        "hy": "Սկսած 4,500 դրամ/օր"
+      },
+      "features": {
+        "en": ["24MP sensor", "Full HD video", "Interchangeable lenses"],
+        "ru": ["24MP сенсор", "Full HD видео", "Сменные объективы"],
+        "hy": ["24MP սենսոր", "Full HD տեսանյութ", "Փոխարինվող ոսպնյակներ"]
+      },
+      "icon": "Camera",
+      "category": "camera",
+      "gpsTracking": true
+    },
+    {
+      "id": 5,
+      "names": {
+        "en": "Action Camera",
+        "ru": "Экшн-камера",
+        "hy": "Գործողության ֆոտոապարատ"
+      },
+      "descriptions": {
+        "en": "Compact recording for field work and presentations.",
+        "ru": "Компактная запись для полевых работ и презентаций.",
+        "hy": "Կոմպակտ գրանցում դաշտային աշխատանքների և ներկայացումների համար:"
+      },
+      "prices": {
+        "en": "From 2,800 AMD/day",
+        "ru": "От 2,800 драм/день",
+        "hy": "Սկսած 2,800 դրամ/օր"
+      },
+      "features": {
+        "en": ["4K video recording", "Waterproof case", "Stabilization"],
+        "ru": ["4K видеозапись", "Водонепроницаемый чехол", "Стабилизация"],
+        "hy": ["4K տեսագրություն", "Ջրակայուն պարկ", "Կայունացում"]
+      },
+      "icon": "Video",
+      "category": "camera",
+      "gpsTracking": true
+    },
+    {
+      "id": 6,
+      "names": {
+        "en": "Webcam HD",
+        "ru": "HD веб-камера",
+        "hy": "HD վեբ կամերա"
+      },
+      "descriptions": {
+        "en": "High-quality streaming for online classes and meetings.",
+        "ru": "Высококачественная трансляция для онлайн-уроков и встреч.",
+        "hy": "Բարձրորակ հոսանք օնլայն դասերի և հանդիպումների համար:"
+      },
+      "prices": {
+        "en": "From 1,200 AMD/day",
+        "ru": "От 1,200 драм/день",
+        "hy": "Սկսած 1,200 դրամ/օր"
+      },
+      "features": {
+        "en": ["1080p resolution", "Auto-focus", "Built-in microphone"],
+        "ru": ["1080p разрешение", "Автофокус", "Встроенный микрофон"],
+        "hy": ["1080p թույլտվություն", "Ինքնակենտրոնացում", "Ներկառուցված բարձրախոս"]
+      },
+      "icon": "Camera",
+      "category": "camera",
+      "gpsTracking": true
+    }
+  ],
+  "gpsRentals": [
+    {
+      "id": 7,
+      "names": {
+        "en": "Handheld GPS",
+        "ru": "Портативный GPS",
+        "hy": "Կրման GPS"
+      },
+      "descriptions": {
+        "en": "Precision navigation for fieldwork and research.",
+        "ru": "Точная навигация для полевых работ и исследований.",
+        "hy": "Ճշգրիտ նավիգացիա դաշտային աշխատանքների և հետազոտությունների համար:"
+      },
+      "prices": {
+        "en": "From 3,200 AMD/day",
+        "ru": "От 3,200 драм/день",
+        "hy": "Սկսած 3,200 դրամ/օր"
+      },
+      "features": {
+        "en": ["High accuracy", "Preloaded maps", "Long battery life"],
+        "ru": ["Высокая точность", "Предзагруженные карты", "Долгий срок службы батареи"],
+        "hy": ["Բարձր ճշգրտություն", "Նախապես բեռնված քարտեզներ", "Երկար մարտկոցի տևողություն"]
+      },
+      "icon": "MapPin",
+      "category": "gps",
+      "gpsTracking": true
+    },
+    {
+      "id": 8,
+      "names": {
+        "en": "Car GPS Navigator",
+        "ru": "Автомобильный GPS навигатор",
+        "hy": "Ավտոմեքենայի GPS նավիգատոր"
+      },
+      "descriptions": {
+        "en": "Vehicle navigation for field trips and surveys.",
+        "ru": "Навигация транспортных средств для экскурсий и опросов.",
+        "hy": "Տրանսպորտային միջոցների նավիգացիա էքսկուրսիաների և հարցումների համար:"
+      },
+      "prices": {
+        "en": "From 2,000 AMD/day",
+        "ru": "От 2,000 драм/день",
+        "hy": "Սկսած 2,000 դրամ/օր"
+      },
+      "features": {
+        "en": ["Traffic updates", "Voice guidance", "Large display"],
+        "ru": ["Обновления трафика", "Голосовое управление", "Большой дисплей"],
+        "hy": ["Երթևեկության թարմացումներ", "Ձայնային ուղղորդում", "Մեծ էկրան"]
+      },
+      "icon": "Navigation",
+      "category": "gps",
+      "gpsTracking": true
+    },
+    {
+      "id": 9,
+      "names": {
+        "en": "GPS Watch",
+        "ru": "GPS часы",
+        "hy": "GPS ժամացույց"
+      },
+      "descriptions": {
+        "en": "Wearable tracking for outdoor activities and research.",
+        "ru": "Носимое отслеживание для активного отдыха и исследований.",
+        "hy": "Կրվող հետևություն բացօթյա գործունեության և հետազոտությունների համար:"
+      },
+      "prices": {
+        "en": "From 2,500 AMD/day",
+        "ru": "От 2,500 драм/день",
+        "hy": "Սկսած 2,500 դրամ/օր"
+      },
+      "features": {
+        "en": ["Heart rate monitor", "Activity tracking", "Water resistant"],
+        "ru": ["Монитор сердечного ритма", "Отслеживание активности", "Водостойкий"],
+        "hy": ["Սրտի հարվածների մոնիտոր", "Գործունեության հետևություն", "Ջրակայուն"]
+      },
+      "icon": "Compass",
+      "category": "gps",
+      "gpsTracking": true
+    }
+  ]
+}

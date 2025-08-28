@@ -4,7 +4,7 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import RentalsSection from "@/components/RentalsSection";
 import ForSaleSection from "@/components/ForSaleSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
-import BookingForm from "@/components/BookingForm";
+import BookingForm from "@/components/BookingForm.tsx";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 

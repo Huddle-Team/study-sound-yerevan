@@ -50,7 +50,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section id="faq" className="py-20 bg-background">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>

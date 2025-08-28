@@ -1,175 +1,151 @@
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Camera, Video, MapPin, Navigation, Compass, Headphones, Mic, Volume2 } from "lucide-react";
-import noiseCancellingImage from "@/assets/noise-cancelling.jpg";
-import studioHeadphonesImage from "@/assets/studio-headphones.jpg";
-import usbHeadsetImage from "@/assets/usb-headset.jpg";
+import { Button } from "@/components/ui/button";
+import { Camera, Video, MapPin, Navigation, Compass, Headphones, Mic, Volume2, Package, Wrench } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useProductData } from "@/hooks/useProductData";
+import { useGPS } from "@/contexts/GPSContext";
+import { toast } from "sonner";
+import BookingModal from "./BookingModal";
+import { useState } from "react";
+
+const iconMap = {
+  Headphones,
+  Volume2,
+  Mic,
+  Camera,
+  Video,
+  MapPin,
+  Navigation,
+  Compass,
+  Package,
+  Wrench,
+};
 
 const RentalsSection = () => {
-  const audioRentals = [
-    {
-      id: 1,
-      name: "Noise-Cancelling Headphones",
-      description: "Perfect for libraries and focus sessions. Block out distractions.",
-      price: "From 3,000 AMD/day",
-      image: noiseCancellingImage,
-      features: ["Active noise cancellation", "30+ hour battery", "Comfortable padding"],
-      icon: Headphones
-    },
-    {
-      id: 2,
-      name: "Studio Headphones",
-      description: "Clean, neutral sound for editing and music practice.",
-      price: "From 2,000 AMD/day",
-      image: studioHeadphonesImage,
-      features: ["Flat frequency response", "Open-back design", "Professional grade"],
-      icon: Volume2
-    },
-    {
-      id: 3,
-      name: "USB Headsets with Mic",
-      description: "Perfect for online classes, Zoom calls, and presentations.",
-      price: "From 1,500 AMD/day",
-      image: usbHeadsetImage,
-      features: ["Clear microphone", "USB plug-and-play", "Noise cancelling mic"],
-      icon: Mic
-    }
-  ];
+  const { t } = useLanguage();
+  const { rentals } = useProductData();
+  const { getCurrentLocation, addTracking } = useGPS();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<string>('');
 
-  const cameraRentals = [
-    {
-      id: 4,
-      name: "DSLR Camera",
-      description: "Professional photography for projects and assignments.",
-      price: "From 4,500 AMD/day",
-      features: ["24MP sensor", "Full HD video", "Interchangeable lenses"],
-      icon: Camera
-    },
-    {
-      id: 5,
-      name: "Action Camera",
-      description: "Compact recording for field work and presentations.",
-      price: "From 2,800 AMD/day",
-      features: ["4K video recording", "Waterproof case", "Stabilization"],
-      icon: Video
-    },
-    {
-      id: 6,
-      name: "Webcam HD",
-      description: "High-quality streaming for online classes and meetings.",
-      price: "From 1,200 AMD/day",
-      features: ["1080p resolution", "Auto-focus", "Built-in microphone"],
-      icon: Camera
-    }
-  ];
+  const handleRentClick = (rental: any) => {
+    setSelectedProduct(rental.name);
+    setModalOpen(true);
+  };
 
-  const gpsRentals = [
-    {
-      id: 7,
-      name: "Handheld GPS",
-      description: "Precision navigation for fieldwork and research.",
-      price: "From 3,200 AMD/day",
-      features: ["High accuracy", "Preloaded maps", "Long battery life"],
-      icon: MapPin
-    },
-    {
-      id: 8,
-      name: "Car GPS Navigator",
-      description: "Vehicle navigation for field trips and surveys.",
-      price: "From 2,000 AMD/day",
-      features: ["Traffic updates", "Voice guidance", "Large display"],
-      icon: Navigation
-    },
-    {
-      id: 9,
-      name: "GPS Watch",
-      description: "Wearable tracking for outdoor activities and research.",
-      price: "From 2,500 AMD/day",
-      features: ["Heart rate monitor", "Activity tracking", "Water resistant"],
-      icon: Compass
+  const handleRentWithGPS = async (item: any) => {
+    if (item.gpsTracking) {
+      try {
+        const location = await getCurrentLocation();
+        if (location) {
+          // Add tracking for this rental (in a real app, this would be done after booking confirmation)
+          addTracking({
+            itemId: item.id,
+            userEmail: 'demo@example.com', // This would come from user context
+            startDate: new Date().toISOString(),
+            endDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(), // 7 days
+            currentLocation: location,
+            isActive: true,
+          });
+          
+          toast.success(`GPS tracking enabled for ${item.name}. Location: ${location.latitude.toFixed(4)}, ${location.longitude.toFixed(4)}`);
+        } else {
+          toast.error("Unable to get current location for GPS tracking");
+        }
+      } catch (error) {
+        console.error('GPS tracking error:', error);
+        toast.error("GPS tracking is not available");
+      }
     }
-  ];
+  };
 
-  const renderRentalCard = (rental: any, hasImage = false) => (
-    <Card key={rental.id} className="overflow-hidden hover:shadow-lg transition-all duration-300 border-0 shadow-md">
-      <CardHeader className="p-0">
-        <div className="relative">
-          {hasImage ? (
-            <img 
-              src={rental.image} 
-              alt={rental.name}
-              className="w-full h-48 object-cover"
-            />
-          ) : (
-            <div className="w-full h-48 bg-gradient-to-br from-secondary to-muted flex items-center justify-center">
-              <rental.icon className="w-16 h-16 text-primary" />
-            </div>
-          )}
-          <Badge className="absolute top-4 left-4 bg-accent text-accent-foreground">
-            For Rent
-          </Badge>
-        </div>
-      </CardHeader>
-      
-      <CardContent className="p-6">
-        <CardTitle className="text-xl mb-2 text-foreground">{rental.name}</CardTitle>
-        <p className="text-muted-foreground mb-4">{rental.description}</p>
+  const renderRentalCard = (rental: any, hasImage = false) => {
+    const IconComponent = iconMap[rental.icon as keyof typeof iconMap] || Package;
+    
+    return (
+      <Card key={rental.id} className="overflow-hidden hover:shadow-lg transition-all duration-300 border-0 shadow-md">
+        <CardHeader className="p-0">
+          <div className="relative">
+            {hasImage && rental.image ? (
+              <img 
+                src={rental.image} 
+                alt={rental.name}
+                className="w-full h-48 object-cover"
+              />
+            ) : (
+              <div className="w-full h-48 bg-gradient-to-br from-secondary to-muted flex items-center justify-center">
+                <IconComponent className="w-16 h-16 text-primary" />
+              </div>
+            )}
+            <Badge className="absolute top-4 left-4 bg-accent text-accent-foreground">
+              {t('common.forRent')}
+            </Badge>
+          </div>
+        </CardHeader>
         
-        <div className="space-y-2">
-          {rental.features.map((feature: string, index: number) => (
-            <div key={index} className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <span className="text-sm text-muted-foreground">{feature}</span>
-            </div>
-          ))}
-        </div>
-      </CardContent>
-      
-      <CardFooter className="p-6 pt-0">
-        <div className="w-full">
-          <div className="text-2xl font-bold text-primary mb-2">{rental.price}</div>
-          <p className="text-xs text-muted-foreground">
-            Includes: case, cable, hygiene covers
-          </p>
-        </div>
-      </CardFooter>
-    </Card>
-  );
+        <CardContent className="p-6">
+          <CardTitle className="text-xl mb-2 text-foreground">{rental.name}</CardTitle>
+          <p className="text-muted-foreground mb-4">{rental.description}</p>
+          
+          <div className="space-y-2">
+            {rental.features.map((feature: string, index: number) => (
+              <div key={index} className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <span className="text-sm text-muted-foreground">{feature}</span>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+        
+        <CardFooter className="p-6 pt-0">
+          <div className="w-full">
+            <div className="text-2xl font-bold text-primary mb-2">{rental.price}</div>
+            <p className="text-xs text-muted-foreground mb-3">
+              {t('common.includes')}
+            </p>
+            <Button 
+              onClick={() => handleRentClick(rental)}
+              size="sm" 
+              className="w-full"
+              variant="outline"
+            >
+              {t('common.rent')}
+            </Button>
+          </div>
+        </CardFooter>
+      </Card>
+    );
+  };
 
   return (
     <section id="rentals" className="py-20 bg-secondary/20">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">Available for Rent</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-4">{t('rentals.title')}</h2>
           <p className="text-xl text-muted-foreground">
-            Professional tech equipment at student-friendly daily rates
+            {t('rentals.subtitle')}
           </p>
         </div>
 
         {/* Audio Equipment Section */}
         <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">Audio Equipment</h3>
+          <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">
+            {t('rentals.audioEquipment')}
+          </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {audioRentals.map((rental) => renderRentalCard(rental, true))}
-          </div>
-        </div>
-
-        {/* Camera Equipment Section */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">Camera Equipment</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {cameraRentals.map((rental) => renderRentalCard(rental, false))}
-          </div>
-        </div>
-
-        {/* GPS Equipment Section */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">GPS & Navigation</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {gpsRentals.map((rental) => renderRentalCard(rental, false))}
+            {rentals.audio && rentals.audio.map((rental) => renderRentalCard(rental, true))}
           </div>
         </div>
       </div>
+
+      {/* Rental Modal */}
+      <BookingModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        actionType="rent"
+        productName={selectedProduct}
+      />
     </section>
   );
 };

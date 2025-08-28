@@ -1,12 +1,18 @@
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import BookingModal from "./BookingModal";
+import { useState } from "react";
 
 const Header = () => {
-  const scrollToBooking = () => {
-    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const { t } = useLanguage();
+  const [modalOpen, setModalOpen] = useState(false);
 
   const scrollToRentals = () => {
     document.getElementById('rentals')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const openBookingModal = () => {
+    setModalOpen(true);
   };
 
   return (
@@ -21,7 +27,7 @@ const Header = () => {
           />
           <div>
             <h1 className="text-xl font-bold text-foreground">SpyTech</h1>
-            <p className="text-xs text-muted-foreground">Student Audio</p>
+            <p className="text-xs text-muted-foreground">Exam Tools</p>
           </div>
         </div>
 
@@ -31,13 +37,13 @@ const Header = () => {
             onClick={scrollToRentals}
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            Rentals
+            {t('navigation.rentals')}
           </button>
           <button 
             onClick={() => document.getElementById('for-sale')?.scrollIntoView({ behavior: 'smooth' })}
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            For Sale
+            {t('navigation.forSale')}
           </button>
           <button 
             onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })}
@@ -51,12 +57,19 @@ const Header = () => {
         <Button 
           variant="default" 
           size="sm" 
-          onClick={scrollToBooking}
+          onClick={openBookingModal}
           className="rounded-lg"
         >
           Book Now
         </Button>
       </div>
+
+      {/* Booking Modal */}
+      <BookingModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        actionType="book"
+      />
     </header>
   );
 };

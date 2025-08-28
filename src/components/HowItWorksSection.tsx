@@ -48,13 +48,6 @@ const HowItWorksSection = () => {
             </div>
           ))}
         </div>
-
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-2 bg-secondary rounded-xl px-6 py-4">
-            <div className="w-3 h-3 bg-accent rounded-full"></div>
-            <span className="text-foreground font-medium">Student ID = 15% discount on rentals</span>
-          </div>
-        </div>
       </div>
     </section>
   );

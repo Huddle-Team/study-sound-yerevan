@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-headphones.jpg";
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+
   const scrollToBooking = () => {
     document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -17,10 +20,10 @@ const HeroSection = () => {
         <div className="text-center lg:text-left space-y-8">
           <div className="space-y-4">
             <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              Rent or Buy <span className="text-primary">Tech Equipment</span> for Study
+              {t('hero.title')}
             </h1>
             <p className="text-xl text-muted-foreground max-w-lg">
-              Headphones, cameras, GPS devices & more in Yerevan—book with your name & phone, we'll call to confirm.
+              {t('hero.subtitle')}
             </p>
           </div>
 

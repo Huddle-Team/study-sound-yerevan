@@ -1,0 +1,158 @@
+{
+  "common": {
+    "brand": "SpyTech Exam Tools",
+    "forRent": "For Rent",
+    "forSale": "For Sale",
+    "rent": "Rent",
+    "buy": "Buy",
+    "new": "New",
+    "used": "Used",
+    "refurbished": "Refurbished",
+    "accessories": "Accessories",
+    "from": "From",
+    "warranty": "warranty",
+    "includes": "Includes: case, cable, hygiene covers",
+    "contact": "Contact",
+    "hours": "Hours & Links",
+    "legalUse": "Legal & ethical use only"
+  },
+  "modal": {
+    "bookTitle": "Book Equipment",
+    "rentTitle": "Rent Equipment",
+    "buyTitle": "Buy Equipment",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Enter your full name",
+    "phoneNumber": "Phone Number",
+    "phoneNumberPlaceholder": "Enter your phone number",
+    "submitBook": "Submit Booking",
+    "submitRent": "Submit Rental",
+    "submitBuy": "Submit Purchase",
+    "cancel": "Cancel",
+    "fillAllFields": "Please fill in all fields",
+    "successTitle": "Success!",
+    "successMessage": "We will call you soon"
+  },
+  "navigation": {
+    "home": "Home",
+    "rentals": "Rentals",
+    "forSale": "For Sale",
+    "contact": "Contact",
+    "about": "About"
+  },
+  "hero": {
+    "title": "Spy Technology      Exam Tools",
+    "subtitle": "Rent or buy professional headphones, microphones, and audio equipment in Yerevan. Perfect for study, calls, and content creation.",
+    "ctaRent": "Browse Rentals",
+    "ctaSale": "Shop Equipment"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Simple process, quick delivery, student-friendly",
+    "step1": {
+      "title": "Browse & Choose",
+      "description": "Select from our curated collection of audio equipment"
+    },
+    "step2": {
+      "title": "Book Online",
+      "description": "Reserve your gear with flexible rental periods"
+    },
+    "step3": {
+      "title": "Pick Up",
+      "description": "Collect from our convenient Yerevan location"
+    },
+    "step4": {
+      "title": "Create & Return",
+      "description": "Use for your projects, then return when done"
+    }
+  },
+  "rentals": {
+    "title": "Available for Rent",
+    "subtitle": "Professional tech equipment at student-friendly daily rates",
+    "audioEquipment": "Audio Equipment",
+    "cameraEquipment": "Camera Equipment",
+    "gpsNavigation": "GPS & Navigation"
+  },
+  "forSaleSection": {
+    "title": "Equipment for Sale",
+    "subtitle": "Quality tech equipment you can own",
+    "audioEquipment": "Audio Equipment",
+    "cameraEquipment": "Camera Equipment",
+    "gpsNavigation": "GPS & Navigation"
+  },
+  "whyChooseUs": {
+    "title": "Why Choose SpyTech?",
+    "subtitle": "Built for students, by students",
+    "affordable": {
+      "title": "Student-Friendly Pricing",
+      "description": "Daily rental rates that won't break your budget"
+    },
+    "legal": {
+      "title": "Legal & Ethical",
+      "description": "All equipment for legitimate educational use only"
+    },
+    "quality": {
+      "title": "Professional Quality",
+      "description": "Tested, cleaned, and maintained equipment"
+    },
+    "support": {
+      "title": "Local Support",
+      "description": "Yerevan-based with quick response times"
+    }
+  },
+  "booking": {
+    "title": "Need Help Choosing?",
+    "subtitle": "Book a consultation call and our experts will help you find the perfect audio equipment for your needs.",
+    "bookCall": "Book a Call",
+    "name": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "university": "University/Institution",
+    "equipment": "Equipment Needed",
+    "selectEquipment": "Select equipment...",
+    "dates": "Rental Dates (if applicable)",
+    "message": "Additional Message",
+    "submit": "Submit Request",
+    "success": "Request submitted successfully!",
+    "error": "Please fill in all required fields."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know",
+    "questions": [
+      {
+        "question": "What do I need to rent equipment?",
+        "answer": "Valid student ID, contact information, and a small security deposit (refunded upon return in good condition)."
+      },
+      {
+        "question": "How long can I rent equipment?",
+        "answer": "Daily, weekly, or monthly rates available. Most students rent for 1-7 days for specific projects."
+      },
+      {
+        "question": "What if equipment gets damaged?",
+        "answer": "Normal wear is expected. Significant damage may result in repair fees, but we're understanding of student budgets."
+      },
+      {
+        "question": "Do you deliver equipment?",
+        "answer": "We offer pickup from our Yerevan location. Delivery may be available for large orders (additional fee applies)."
+      },
+      {
+        "question": "Can I buy equipment in installments?",
+        "answer": "Yes! We offer payment plans for purchases over 20,000 AMD. Contact us to discuss options."
+      }
+    ]
+  },
+  "footer": {
+    "description": "Affordable, legal audio gear for students in Yerevan. Rent or buy headphones for study, calls, and content creation.",
+    "phone": "+374 XX XXX XXX",
+    "email": "hello@spytech.am",
+    "telegram": "Telegram & WhatsApp",
+    "address": "Yerevan",
+    "addressNote": "(exact pickup point shared during confirmation)",
+    "hours": "Mon–Sat 11:00–19:00",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "copyright": "© 2024 SpyTech Student Audio. All rights reserved.",
+    "tagline": "Serving students in Yerevan with quality audio gear.",
+    "language": "Language"
+  }
+}
