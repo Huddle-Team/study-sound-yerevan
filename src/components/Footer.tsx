@@ -7,7 +7,14 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">SpyTech Student Audio</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="/lovable-uploads/e6dd464b-2ef6-448d-bfd1-275f6f65b1ed.png" 
+                alt="SpyTech Student Audio Logo" 
+                className="w-12 h-12"
+              />
+              <h3 className="text-2xl font-bold">SpyTech Student Audio</h3>
+            </div>
             <p className="text-primary-foreground/80 mb-6 max-w-md">
               Affordable, legal audio gear for students in Yerevan. Rent or buy headphones for study, calls, and content creation.
             </p>
