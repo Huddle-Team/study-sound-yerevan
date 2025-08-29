@@ -160,6 +160,32 @@
       "icon": "Camera",
       "category": "camera",
       "gpsTracking": true
+    },
+    {
+      "id": 10,
+      "names": {
+        "en": "Micro Camera",
+        "ru": "Микро-камера",
+        "hy": "Միկրո կամերա"
+      },
+      "descriptions": {
+        "en": "Ultra-compact recording device for discreet documentation and research.",
+        "ru": "Ультракомпактное записывающее устройство для дискретной документации и исследований.",
+        "hy": "Ուլտրակոմպակտ գրանցող սարք գաղտնի փաստագրման և հետազոտությունների համար:"
+      },
+      "prices": {
+        "en": "From 3,500 AMD/day",
+        "ru": "От 3,500 драм/день",
+        "hy": "Սկսած 3,500 դրամ/օր"
+      },
+      "features": {
+        "en": ["Ultra-compact design", "HD video recording", "Long battery life", "Memory card included"],
+        "ru": ["Ультракомпактный дизайн", "HD видеозапись", "Долгое время автономной работы", "Карта памяти включена"],
+        "hy": ["Ուլտրակոմպակտ դիզայն", "HD տեսագրություն", "Երկար մարտկոցի կյանք", "Հիշողության քարտ ներառված"]
+      },
+      "icon": "Camera",
+      "category": "camera",
+      "gpsTracking": true
     }
   ],
   "gpsRentals": [

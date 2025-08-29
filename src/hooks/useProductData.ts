@@ -138,7 +138,6 @@ const rentalsData = {
       "gpsTracking": true
     }
   ],
-  /*
   "cameraRentals": [
     {
       "id": 5,
@@ -217,6 +216,32 @@ const rentalsData = {
       "icon": "Camera",
       "category": "camera",
       "gpsTracking": true
+    },
+    {
+      "id": 10,
+      "names": {
+        "en": "Micro Camera",
+        "ru": "Микро-камера",
+        "hy": "Միկրո կամերա"
+      },
+      "descriptions": {
+        "en": "Ultra-compact recording device for discreet documentation and research.",
+        "ru": "Ультракомпактное записывающее устройство для дискретной документации и исследований.",
+        "hy": "Ուլտրակոմպակտ գրանցող սարք գաղտնի փաստագրման և հետազոտությունների համար:"
+      },
+      "prices": {
+        "en": "From 3,500 AMD/day",
+        "ru": "От 3,500 драм/день",
+        "hy": "Սկսած 3,500 դրամ/օր"
+      },
+      "features": {
+        "en": ["Ultra-compact design", "HD video recording", "Long battery life", "Memory card included"],
+        "ru": ["Ультракомпактный дизайн", "HD видеозапись", "Долгое время автономной работы", "Карта памяти включена"],
+        "hy": ["Ուլտրակոմպակտ դիզայն", "HD տեսագրություն", "Երկար մարտկոցի կյանք", "Հիշողության քարտ ներառված"]
+      },
+      "icon": "Camera",
+      "category": "camera",
+      "gpsTracking": true
     }
   ],
   "gpsRentals": [
@@ -273,7 +298,7 @@ const rentalsData = {
       "gpsTracking": true
     },
     {
-      "id": 10,
+      "id": 11,
       "names": {
         "en": "GPS Watch",
         "ru": "GPS часы",
@@ -299,7 +324,6 @@ const rentalsData = {
       "gpsTracking": true
     }
   ]
-  */
 };
 
 const productsData = {
@@ -578,22 +602,30 @@ export const useProductData = () => {
   const { language } = useLanguage();
   const [rentals, setRentals] = useState<{
     audio: RentalItem[];
-  }>({ audio: [] });
+    camera: RentalItem[];
+    gps: RentalItem[];
+  }>({ audio: [], camera: [], gps: [] });
   
   const [products, setProducts] = useState<{
     audio: SaleItem[];
-  }>({ audio: [] });
+    camera: SaleItem[];
+    gps: SaleItem[];
+  }>({ audio: [], camera: [], gps: [] });
 
   useEffect(() => {
     // Load and categorize rentals
     const categorizedRentals = {
       audio: rentalsData.audioRentals,
+      camera: rentalsData.cameraRentals,
+      gps: rentalsData.gpsRentals,
     };
     setRentals(categorizedRentals);
 
     // Load and categorize products
     const categorizedProducts = {
       audio: productsData.audioSaleItems,
+      camera: productsData.cameraSaleItems,
+      gps: productsData.gpsSaleItems,
     };
     setProducts(categorizedProducts);
   }, []);
@@ -617,16 +649,24 @@ export const useProductData = () => {
 
   return {
     rentals: {
-      audio: rentals.audio.map(getLocalizedRental),
+      audio: rentals.audio ? rentals.audio.map(getLocalizedRental) : [],
+      camera: rentals.camera ? rentals.camera.map(getLocalizedRental) : [],
+      gps: rentals.gps ? rentals.gps.map(getLocalizedRental) : [],
     },
     products: {
-      audio: products.audio.map(getLocalizedProduct),
+      audio: products.audio ? products.audio.map(getLocalizedProduct) : [],
+      camera: products.camera ? products.camera.map(getLocalizedProduct) : [],
+      gps: products.gps ? products.gps.map(getLocalizedProduct) : [],
     },
     allRentals: [
-      ...rentals.audio.map(getLocalizedRental),
+      ...(rentals.audio ? rentals.audio.map(getLocalizedRental) : []),
+      ...(rentals.camera ? rentals.camera.map(getLocalizedRental) : []),
+      ...(rentals.gps ? rentals.gps.map(getLocalizedRental) : []),
     ],
     allProducts: [
-      ...products.audio.map(getLocalizedProduct),
+      ...(products.audio ? products.audio.map(getLocalizedProduct) : []),
+      ...(products.camera ? products.camera.map(getLocalizedProduct) : []),
+      ...(products.gps ? products.gps.map(getLocalizedProduct) : []),
     ],
   };
 };

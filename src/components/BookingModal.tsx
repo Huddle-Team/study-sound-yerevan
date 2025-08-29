@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { toast } from "sonner";
 
@@ -14,12 +15,55 @@ interface BookingModalProps {
 }
 
 const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType, productName }) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const [rentals, setRentals] = useState<any[]>([]);
+  const [saleItems, setSaleItems] = useState<any[]>([]);
   const [formData, setFormData] = useState({
     fullName: '',
-    phoneNumber: ''
+    phoneNumber: '',
+    selectedActionType: actionType === 'book' ? '' : actionType === 'buy' ? 'buy' : 'rent',
+    selectedRentItem: '',
+    selectedSaleItem: ''
   });
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
+  // Load data from JSON files
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const [rentalsResponse, productsResponse] = await Promise.all([
+          import('@/data/rentals.json'),
+          import('@/data/products.json')
+        ]);
+        
+        // Only include rentals that are displayed on the website (audio and only micro camera)
+        const allRentals = [
+          ...rentalsResponse.audioRentals,
+          ...rentalsResponse.cameraRentals.filter((camera: any) => camera.id === 10)  // Only micro camera
+        ];
+        
+        // Only include sale items that are displayed on the website (only audio)  
+        const allSaleItems = [
+          ...productsResponse.audioSaleItems
+        ];
+        
+        setRentals(allRentals);
+        setSaleItems(allSaleItems);
+      } catch (error) {
+        console.error('Error loading data:', error);
+      }
+    };
+    
+    loadData();
+  }, []);
+
+  // Update selectedActionType when actionType prop changes
+  useEffect(() => {
+    setFormData(prev => ({
+      ...prev,
+      selectedActionType: actionType === 'book' ? '' : actionType === 'buy' ? 'buy' : 'rent'
+    }));
+  }, [actionType]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,13 +73,45 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
       return;
     }
 
+    // Additional validation for specific action types
+    if (actionType === 'book') {
+      if (!formData.selectedActionType) {
+        toast.error(t('modal.fillAllFields'));
+        return;
+      }
+      if (formData.selectedActionType === 'rent' && !formData.selectedRentItem) {
+        toast.error(t('modal.fillAllFields'));
+        return;
+      }
+      if (formData.selectedActionType === 'buy' && !formData.selectedSaleItem) {
+        toast.error(t('modal.fillAllFields'));
+        return;
+      }
+    } else if (actionType === 'rent') {
+      if (!formData.selectedRentItem) {
+        toast.error(t('modal.fillAllFields'));
+        return;
+      }
+    } else if (actionType === 'buy') {
+      if (!formData.selectedSaleItem) {
+        toast.error(t('modal.fillAllFields'));
+        return;
+      }
+    }
+
     // Simulate form submission
     setShowSuccessMessage(true);
     
     // Reset form after 3 seconds and close modal
     setTimeout(() => {
       setShowSuccessMessage(false);
-      setFormData({ fullName: '', phoneNumber: '' });
+      setFormData({ 
+        fullName: '', 
+        phoneNumber: '', 
+        selectedActionType: actionType === 'book' ? '' : actionType === 'buy' ? 'buy' : 'rent',
+        selectedRentItem: '',
+        selectedSaleItem: ''
+      });
       onClose();
     }, 3000);
   };
@@ -122,6 +198,60 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
                 required
               />
             </div>
+
+            {/* Show action type selector only for book action */}
+            {actionType === 'book' && (
+              <div className="space-y-2">
+                <Label htmlFor="actionType">{t('modal.actionType')}</Label>
+                <Select value={formData.selectedActionType} onValueChange={(value) => handleInputChange('selectedActionType', value)}>
+                  <SelectTrigger>
+                    <SelectValue placeholder={t('modal.actionTypePlaceholder')} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="rent">{t('modal.actionTypeRent')}</SelectItem>
+                    <SelectItem value="buy">{t('modal.actionTypeSale')}</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            )}
+
+            {/* Show rental options for rent action or when rent is selected in book */}
+            {(actionType === 'rent' || (actionType === 'book' && formData.selectedActionType === 'rent')) && (
+              <div className="space-y-2">
+                <Label htmlFor="rentVariant">{t('modal.rentVariant')}</Label>
+                <Select value={formData.selectedRentItem} onValueChange={(value) => handleInputChange('selectedRentItem', value)}>
+                  <SelectTrigger>
+                    <SelectValue placeholder={t('modal.rentVariantPlaceholder')} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {rentals.map((item) => (
+                      <SelectItem key={item.id} value={item.id.toString()}>
+                        {item.names[language] || item.names.en} - {item.prices[language] || item.prices.en}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            )}
+
+            {/* Show sale options for buy action or when buy is selected in book */}
+            {(actionType === 'buy' || (actionType === 'book' && formData.selectedActionType === 'buy')) && (
+              <div className="space-y-2">
+                <Label htmlFor="saleItem">{t('modal.saleItem')}</Label>
+                <Select value={formData.selectedSaleItem} onValueChange={(value) => handleInputChange('selectedSaleItem', value)}>
+                  <SelectTrigger>
+                    <SelectValue placeholder={t('modal.saleItemPlaceholder')} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {saleItems.map((item) => (
+                      <SelectItem key={item.id} value={item.id.toString()}>
+                        {item.names[language] || item.names.en} - {item.prices[language] || item.prices.en}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            )}
 
             <div className="flex gap-3 pt-4">
               <Button

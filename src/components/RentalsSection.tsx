@@ -128,14 +128,16 @@ const RentalsSection = () => {
           </p>
         </div>
 
-        {/* Audio Equipment Section */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">
-            {t('rentals.audioEquipment')}
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {rentals.audio && rentals.audio.map((rental) => renderRentalCard(rental, true))}
-          </div>
+        {/* All Equipment in One Section */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Audio Equipment */}
+          {rentals.audio && rentals.audio.map((rental) => renderRentalCard(rental, true))}
+          
+          {/* Only show Micro Camera from camera equipment */}
+          {rentals.camera && rentals.camera
+            .filter((rental) => rental.id === 10) // Only show micro camera (id 10)
+            .map((rental) => renderRentalCard(rental, true))
+          }
         </div>
       </div>
 
