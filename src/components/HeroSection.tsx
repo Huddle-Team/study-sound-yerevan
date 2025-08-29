@@ -34,7 +34,7 @@ const HeroSection = () => {
               onClick={scrollToBooking}
               className="text-lg px-8 py-6 rounded-xl"
             >
-              Book a Call
+              {t('cta.bookCall')}
             </Button>
             <Button 
               variant="outline" 
@@ -42,12 +42,12 @@ const HeroSection = () => {
               onClick={scrollToPrices}
               className="text-lg px-8 py-6 rounded-xl"
             >
-              See Prices
+              {t('cta.seePrices')}
             </Button>
           </div>
 
           <p className="text-sm text-muted-foreground border border-border rounded-lg p-4 bg-secondary/50">
-            <strong>No online payments</strong> — booking only.
+            {t('cta.noPayments')}
           </p>
         </div>
 
@@ -60,7 +60,7 @@ const HeroSection = () => {
               className="w-full max-w-lg rounded-2xl shadow-2xl"
             />
             <div className="absolute -bottom-6 -right-6 bg-accent text-accent-foreground px-6 py-3 rounded-xl font-semibold shadow-lg">
-              From 3000 AMD/day
+              {t('hero.priceFrom')}
             </div>
           </div>
         </div>

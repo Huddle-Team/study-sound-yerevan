@@ -60,7 +60,7 @@ const Header = () => {
           onClick={openBookingModal}
           className="rounded-lg"
         >
-          Book Now
+          {t('cta.bookNow')}
         </Button>
       </div>
 

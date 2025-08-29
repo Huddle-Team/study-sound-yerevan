@@ -1,4 +1,4 @@
-import { Phone, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Phone, MapPin, Clock, MessageCircle, Instagram } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSelector from "./LanguageSelector";
 
@@ -27,11 +27,45 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4" />
-                <span className="text-sm">{t('footer.phone')}</span>
+                <a 
+                  href={`tel:${t('contact.phone')}`}
+                  className="text-sm hover:text-accent transition-colors cursor-pointer"
+                >
+                  {t('contact.phone')}
+                </a>
               </div>
               <div className="flex items-center gap-3">
                 <MessageCircle className="w-4 h-4" />
-                <span className="text-sm">{t('footer.telegram')}</span>
+                <a 
+                  href={t('contact.telegram')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm hover:text-accent transition-colors cursor-pointer"
+                >
+                  Telegram
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <MessageCircle className="w-4 h-4" />
+                <a 
+                  href={t('contact.whatsapp')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm hover:text-accent transition-colors cursor-pointer"
+                >
+                  WhatsApp
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Instagram className="w-4 h-4" />
+                <a 
+                  href={t('contact.instagram')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm hover:text-accent transition-colors cursor-pointer"
+                >
+                  Instagram
+                </a>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-0.5" />
@@ -67,6 +101,13 @@ const Footer = () => {
             {t('footer.copyright')}
             <span className="block mt-1">{t('footer.tagline')}</span>
           </p>
+          <div className="flex justify-center mt-4">
+            <img 
+              src="/copyright.png" 
+              alt="Copyright" 
+              className="h-auto w-1/4"
+            />
+          </div>
         </div>
       </div>
     </footer>

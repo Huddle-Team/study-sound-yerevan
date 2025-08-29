@@ -16,6 +16,12 @@
     "hours": "Hours & Links",
     "legalUse": "Legal & ethical use only"
   },
+  "contact": {
+    "phone": "+374 99 123 456",
+    "telegram": "https://t.me/spytechexamtools",
+    "whatsapp": "https://wa.me/37499123456",
+    "instagram": "https://instagram.com/spytechexamtools"
+  },
   "modal": {
     "bookTitle": "Book Equipment",
     "rentTitle": "Rent Equipment",
@@ -51,7 +57,8 @@
     "title": "Spy Technology      Exam Tools",
     "subtitle": "Rent or buy professional ,spy earpieces, and spy cameras in Yerevan. Perfect for exams, calls, and interviews.",
     "ctaRent": "Browse Rentals",
-    "ctaSale": "Shop Equipment"
+    "ctaSale": "Shop Equipment",
+    "priceFrom": "From 3000 AMD/day"
   },
   "howItWorks": {
     "title": "How It Works",
@@ -110,6 +117,12 @@
         "description": "Pickup, delivery, and local customer service"
       }
     ]
+  },
+  "cta": {
+    "bookNow": "Book Now",
+    "bookCall": "Book a Call",
+    "seePrices": "See Prices",
+    "noPayments": "No online payments — booking only."
   },
   "booking": {
     "title": "Need Help Choosing?",
