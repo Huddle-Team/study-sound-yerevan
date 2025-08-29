@@ -28,8 +28,8 @@ const WhyChooseUsSection = () => {
     <section className="py-20 bg-gradient-to-r from-primary/5 to-accent/5">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">Why Choose SpyTech Student Audio?</h2>
-          <p className="text-xl text-muted-foreground">Trusted by students across Yerevan</p>
+          <h2 className="text-4xl font-bold text-foreground mb-4">Why Choose SpyTech?</h2>
+          <p className="text-xl text-muted-foreground">Trusted by people across Yerevan</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">

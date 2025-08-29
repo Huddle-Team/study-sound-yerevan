@@ -60,7 +60,7 @@ const HeroSection = () => {
               className="w-full max-w-lg rounded-2xl shadow-2xl"
             />
             <div className="absolute -bottom-6 -right-6 bg-accent text-accent-foreground px-6 py-3 rounded-xl font-semibold shadow-lg">
-              From 1,500 AMD/day
+              From 3000 AMD/day
             </div>
           </div>
         </div>
