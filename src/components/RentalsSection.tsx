@@ -71,7 +71,7 @@ const RentalsSection = () => {
               <img 
                 src={rental.image} 
                 alt={rental.name}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-contain bg-white p-4"
               />
             ) : (
               <div className="w-full h-48 bg-gradient-to-br from-secondary to-muted flex items-center justify-center">

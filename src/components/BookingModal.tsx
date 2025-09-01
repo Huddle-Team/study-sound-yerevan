@@ -25,6 +25,10 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
     selectedRentItem: '',
     selectedSaleItem: ''
   });
+  const [errors, setErrors] = useState({
+    fullName: '',
+    phoneNumber: ''
+  });
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   // Load data from JSON files
@@ -65,11 +69,42 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
     }));
   }, [actionType]);
 
+  // Validation functions
+  const validateName = (name: string) => {
+    if (!name.trim()) {
+      return 'Name is required';
+    }
+    if (!/^[a-zA-ZáàâäãåąčćđéèêëęëĞğỊịİıĺłľńňőóôöõøŕřşšťūúůüưvýỳỹŶŷŽžЁёЀѐЅѕЄєЁёЋћЂђЅѕІіЇїЈјЉљЊњЋћЌќЎўЏџАаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯяՀհԱաԲբԳգԴդԵեԶզԷէԸըԹթԺժԻիԼլԽխԾծԿկՀհՁձՂղՃճՄմՅյՆնՇշՈոՉչՊպՋջՌռՍսՎվՏտՐրՑցՒւՓփՔքՕօՖֆ\s]+$/.test(name)) {
+      return 'Name should contain only letters and spaces';
+    }
+    return '';
+  };
+
+  const validatePhone = (phone: string) => {
+    if (!phone.trim()) {
+      return 'Phone number is required';
+    }
+    if (!/^[\d\s\+\-\(\)]+$/.test(phone)) {
+      return 'Phone number should contain only numbers and basic formatting (+, -, space, parentheses)';
+    }
+    return '';
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.fullName.trim() || !formData.phoneNumber.trim()) {
-      toast.error(t('modal.fillAllFields'));
+    // Validate inputs
+    const nameError = validateName(formData.fullName);
+    const phoneError = validatePhone(formData.phoneNumber);
+    
+    setErrors({
+      fullName: nameError,
+      phoneNumber: phoneError
+    });
+
+    // If there are validation errors, stop submission
+    if (nameError || phoneError) {
+      toast.error('Please fix the errors and try again');
       return;
     }
 
@@ -112,6 +147,10 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
         selectedRentItem: '',
         selectedSaleItem: ''
       });
+      setErrors({
+        fullName: '',
+        phoneNumber: ''
+      });
       onClose();
     }, 3000);
   };
@@ -121,6 +160,14 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
       ...prev,
       [field]: value
     }));
+    
+    // Clear errors when user starts typing
+    if (field === 'fullName' && errors.fullName) {
+      setErrors(prev => ({ ...prev, fullName: '' }));
+    }
+    if (field === 'phoneNumber' && errors.phoneNumber) {
+      setErrors(prev => ({ ...prev, phoneNumber: '' }));
+    }
   };
 
   const getModalTitle = () => {
@@ -183,8 +230,12 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
                 placeholder={t('modal.fullNamePlaceholder')}
                 value={formData.fullName}
                 onChange={(e) => handleInputChange('fullName', e.target.value)}
+                className={errors.fullName ? 'border-red-500' : ''}
                 required
               />
+              {errors.fullName && (
+                <p className="text-red-500 text-sm">{errors.fullName}</p>
+              )}
             </div>
 
             <div className="space-y-2">
@@ -195,8 +246,12 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
                 placeholder={t('modal.phoneNumberPlaceholder')}
                 value={formData.phoneNumber}
                 onChange={(e) => handleInputChange('phoneNumber', e.target.value)}
+                className={errors.phoneNumber ? 'border-red-500' : ''}
                 required
               />
+              {errors.phoneNumber && (
+                <p className="text-red-500 text-sm">{errors.phoneNumber}</p>
+              )}
             </div>
 
             {/* Show action type selector only for book action */}

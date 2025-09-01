@@ -101,12 +101,19 @@ const Footer = () => {
             {t('footer.copyright')}
             <span className="block mt-1">{t('footer.tagline')}</span>
           </p>
-          <div className="flex justify-center mt-4">
-            <img 
-              src="/copyright.png" 
-              alt="Copyright" 
-              className="h-auto w-1/4"
-            />
+          <div className="flex justify-center items-center mt-4">
+            <a 
+              href="https://huddlesys.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity flex justify-center"
+            >
+              <img 
+                src="/copyright.png" 
+                alt="Copyright" 
+                className="h-auto w-1/4 cursor-pointer mx-auto"
+              />
+            </a>
           </div>
         </div>
       </div>

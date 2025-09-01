@@ -11,6 +11,10 @@ const Header = () => {
     document.getElementById('rentals')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToFooter = () => {
+    document.querySelector('footer')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const openBookingModal = () => {
     setModalOpen(true);
   };
@@ -50,6 +54,12 @@ const Header = () => {
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             FAQ
+          </button>
+          <button 
+            onClick={scrollToFooter}
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            {t('common.contact')}
           </button>
         </nav>
 

@@ -156,7 +156,7 @@ const rentalsData = {
         "ru": "От 4,500 драм/день",
         "hy": "Սկսած 4,500 դրամ/օր"
       },
-      "image": "/usb-headset.jpg",
+      "image": "/spy-camera.jpg",
       "features": {
         "en": ["24MP sensor", "Full HD video", "Interchangeable lenses"],
         "ru": ["24MP сенсор", "Full HD видео", "Сменные объективы"],
@@ -235,6 +235,7 @@ const rentalsData = {
         "ru": "От 7,000 драм/день",
         "hy": "Սկսած 7,000 դրամ/օր"
       },
+      "image": "/spy-camera.jpg",
       "features": {
         "en": ["Ultra-compact design", "HD video recording", "Long battery life", "Memory card included"],
         "ru": ["Ультракомпактный дизайн", "HD видеозапись", "Долгое время автономной работы", "Карта памяти включена"],
@@ -400,7 +401,7 @@ const productsData = {
         "ru": "От 30,000 драм",
         "hy": "Սկսած 30,000 դրամ"
       },
-      "image": null,
+      "image": "/usb-headset.jpg",
       "badge": {
         "en": "Accessories",
         "ru": "Аксессуары",
