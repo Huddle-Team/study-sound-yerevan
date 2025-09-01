@@ -4,31 +4,21 @@ FROM node:18-alpine
 # Set working directory in container
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
-
-# Install dependencies
-RUN npm ci --only=production
-
-# Copy application code first
+# Copy everything first
 COPY . .
 
-# Then override server.js with the auto-SSL version
-COPY server-auto-ssl.js server.js
+# Install dependencies
+RUN npm install --production
 
-# Create data directory and copy data files
-RUN mkdir -p data
-COPY data/ ./data/
-
-# Create SSL directory for certificates
-RUN mkdir -p ssl
+# Override server.js with the auto-SSL version
+RUN cp server-auto-ssl.js server.js
 
 # Create non-root user for security
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S spytech -u 1001
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S spytech -u 1001 && \
+    chown -R spytech:nodejs /app
 
-# Change ownership of app directory to nodejs user
-RUN chown -R spytech:nodejs /app
+# Switch to non-root user
 USER spytech
 
 # Expose both HTTP and HTTPS ports
