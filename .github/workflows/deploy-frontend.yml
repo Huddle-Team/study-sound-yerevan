@@ -24,8 +24,8 @@ jobs:
 
     - name: Build for production
       run: |
-        echo "🏗️ Building for production with API URL: https://104.154.91.216:3443/api"
-        VITE_API_URL=https://104.154.91.216:3443/api npm run build
+        echo "🏗️ Building for production with API URL: http://104.154.91.216:3001/api"
+        VITE_API_URL=http://104.154.91.216:3001/api npm run build
       env:
         NODE_ENV: production
 

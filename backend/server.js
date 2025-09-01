@@ -22,8 +22,28 @@ try {
   console.warn('⚠️  Warning: Could not load product data files:', error.message);
 }
 
-// Security middleware
-app.use(helmet());
+// Security middleware with mixed content handling
+app.use(helmet({
+  contentSecurityPolicy: false, // Disable CSP to allow mixed content
+  crossOriginEmbedderPolicy: false
+}));
+
+// Special middleware to handle mixed content requests
+app.use((req, res, next) => {
+  // Allow requests from HTTPS sites to HTTP API
+  res.header('Access-Control-Allow-Origin', 'https://spytech.am');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+});
+
 app.use(cors({
   origin: [
     'https://spytech.am',      // Production domain
@@ -34,7 +54,9 @@ app.use(cors({
     'http://127.0.0.1:8080',  // localhost alternative
     process.env.FRONTEND_URL  // Environment variable
   ].filter(Boolean), // Remove undefined values
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin']
 }));
 
 // Rate limiting
