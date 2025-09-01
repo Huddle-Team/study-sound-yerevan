@@ -10,9 +10,11 @@ COPY package*.json ./
 # Install dependencies
 RUN npm ci --only=production
 
-# Copy application code
-COPY server-https.js server.js
+# Copy application code first
 COPY . .
+
+# Then override server.js with the HTTPS version
+COPY server-https.js server.js
 
 # Create data directory and copy data files
 RUN mkdir -p data
