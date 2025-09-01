@@ -8,9 +8,6 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    headers: {
-      'Content-Security-Policy': 'upgrade-insecure-requests'
-    }
   },
   plugins: [
     react(),
