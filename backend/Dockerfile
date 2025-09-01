@@ -13,16 +13,16 @@ RUN npm install --production
 # Override server.js with the auto-SSL version
 RUN cp server-auto-ssl.js server.js
 
-# Create non-root user for security
+# Create non-root user for security (but we'll run as root for port 443)
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S spytech -u 1001 && \
     chown -R spytech:nodejs /app
 
-# Switch to non-root user
-USER spytech
+# Note: Running as root to bind to port 443
+# USER spytech
 
 # Expose both HTTP and HTTPS ports
-EXPOSE 3001 3443
+EXPOSE 3001 443
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \

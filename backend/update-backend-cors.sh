@@ -2,8 +2,14 @@
 
 echo "🔄 Updating backend container with api.spytech.am support..."
 
-# Navigate to backend directory
-cd backend
+# Make sure we're in the backend directory
+if [ ! -f "Dockerfile" ]; then
+    echo "❌ Dockerfile not found. Make sure you're running this from the backend directory."
+    echo "📋 Current directory: $(pwd)"
+    echo "📋 Looking for: Dockerfile"
+    ls -la
+    exit 1
+fi
 
 # Stop current container
 echo "🛑 Stopping current container..."
