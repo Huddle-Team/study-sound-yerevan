@@ -13,8 +13,8 @@ RUN npm ci --only=production
 # Copy application code first
 COPY . .
 
-# Then override server.js with the HTTPS version
-COPY server-https.js server.js
+# Then override server.js with the auto-SSL version
+COPY server-auto-ssl.js server.js
 
 # Create data directory and copy data files
 RUN mkdir -p data
