@@ -32,14 +32,14 @@ const rentalsData = {
     {
       "id": 1,
       "names": {
-        "en": "Noise-Cancelling Headphones",
-        "ru": "Наушники с шумоподавлением",
-        "hy": "Աղմուկ մարող ականջակալներ"
+        "en": "Micro Earpieces Basic",
+        "ru": "Микронаушник Basic",
+        "hy": "Միկրոականջակալ Basic"
       },
       "descriptions": {
-        "en": "Perfect for libraries and focus sessions. Block out distractions.",
-        "ru": "Идеально для библиотек и сеансов концентрации. Блокируйте отвлекающие факторы.",
-        "hy": "Կատարյալ գրադարանների և կենտրոնացման աշխատանքների համար: Արգելափակեք ուշադրության շեղումները:"
+        "en": "Perfect for students in exams. Connect wirelessly via Bluetooth in seconds.",
+        "ru": "Идеально для студентов на экзаменах и не только. Мгновенное беспроводное подключение через Bluetooth.",
+        "hy": "Իդեալական է քննությունների համար և ոչ միայն։ Անլար միացում՝ Bluetooth-ի միջոցով՝ հաշված վայրկյաններում:"
       },
       "prices": {
         "en": "From 3,000 AMD/day",
@@ -48,9 +48,9 @@ const rentalsData = {
       },
       "image": "/noise-cancelling.jpg",
       "features": {
-        "en": ["Active noise cancellation", "30+ hour battery", "Comfortable padding"],
-        "ru": ["Активное шумоподавление", "Батарея 30+ часов", "Удобные накладки"],
-        "hy": ["Ակտիվ աղմուկ մարում", "30+ ժամ մարտկոց", "Հարմարավետ պարկեր"]
+        "en": ["High-quality sound", "Sensitive microphone", "4+ hour battery"],
+        "ru": ["Высокое качество звука", "Чувствительный микрофон", "Батарея 4+ часа"],
+        "hy": ["Բարձր ձայն", "Նուրբ միկրոֆոն", "4+ ժամ մարտկոց"]
       },
       "icon": "Headphones",
       "category": "audio",
@@ -59,25 +59,25 @@ const rentalsData = {
     {
       "id": 2,
       "names": {
-        "en": "Studio Headphones",
-        "ru": "Студийные наушники",
-        "hy": "Ստուդիայի ականջակալներ"
+        "en": "Micro Earpieces Croco",
+        "ru": "Микронаушник Croco",
+        "hy": "Միկրոականջակալ Croco"
       },
       "descriptions": {
-        "en": "Clean, neutral sound for editing and music practice.",
-        "ru": "Чистый, нейтральный звук для редактирования и музыкальной практики.",
-        "hy": "Մաքուր, չեզոք ձայն խմբագրման և երաժշտական պրակտիկայի համար:"
+        "en": "Perfect for students in exams. Connect wirelessly via Bluetooth in seconds.",
+        "ru": "Идеально для студентов на экзаменах и не только. Мгновенное беспроводное подключение через Bluetooth.",
+        "hy": "Իդեալական է քննությունների համար և ոչ միայն։ Անլար միացում՝ Bluetooth-ի միջոցով՝ հաշված վայրկյաններում:"
       },
       "prices": {
-        "en": "From 2,000 AMD/day",
-        "ru": "От 2,000 драм/день",
-        "hy": "Սկսած 2,000 դրամ/օր"
+        "en": "From 4,000 AMD/day",
+        "ru": "От 4,000 драм/день",
+        "hy": "Սկսած 4,000 դրամ/օր"
       },
       "image": "/studio-headphones.jpg",
       "features": {
-        "en": ["Flat frequency response", "Open-back design", "Professional grade"],
-        "ru": ["Плоская частотная характеристика", "Открытая конструкция", "Профессиональный уровень"],
-        "hy": ["Հարթ հաճախությունային բնութագիր", "Բաց դիզայն", "Պրոֆեսիոնալ որակ"]
+        "en": ["High-quality sound", "Sensitive microphone", "4+ hour battery"],
+        "ru": ["Высокое качество звука", "Чувствительный микрофон", "Батарея 4+ часа"],
+        "hy": ["Բարձր ձայն", "Նուրբ միկրոֆոն", "4+ ժամ մարտկոց"]
       },
       "icon": "Volume2",
       "category": "audio",
@@ -86,25 +86,25 @@ const rentalsData = {
     {
       "id": 3,
       "names": {
-        "en": "USB Headsets with Mic",
-        "ru": "USB-наушники с микрофоном",
-        "hy": "USB ականջակալներ բարձրախոսով"
+        "en": "Micro Earpieces Light",
+        "ru": "Микронаушник Light",
+        "hy": "Միկրոականջակալ Light"
       },
       "descriptions": {
-        "en": "Perfect for online classes, Zoom calls, and presentations.",
-        "ru": "Идеально для онлайн-уроков, Zoom-звонков и презентаций.",
-        "hy": "Կատարյալ օնլայն դասերի, Zoom զանգերի և ներկայացումների համար:"
+        "en": "Perfect for students in exams. Connect wirelessly via Bluetooth in seconds.",
+        "ru": "Идеально для студентов на экзаменах и не только. Мгновенное беспроводное подключение через Bluetooth.",
+        "hy": "Իդեալական է քննությունների համար և ոչ միայն։ Անլար միացում՝ Bluetooth-ի միջոցով՝ հաշված վայրկյաններում:"
       },
       "prices": {
-        "en": "From 1,500 AMD/day",
-        "ru": "От 1,500 драм/день",
-        "hy": "Սկսած 1,500 դրամ/օր"
+        "en": "From 30,000 AMD/day",
+        "ru": "От 30,000 драм/день",
+        "hy": "Սկսած 30,000 դրամ/օր"
       },
       "image": "/usb-headset.jpg",
       "features": {
-        "en": ["Clear microphone", "USB plug-and-play", "Noise cancelling mic"],
-        "ru": ["Четкий микрофон", "USB подключи и играй", "Микрофон с шумоподавлением"],
-        "hy": ["Մաքուր բարձրախոս", "USB միացրու և օգտագործիր", "Աղմուկ մարող բարձրախոս"]
+        "en": ["High-quality sound", "Sensitive microphone", "6+ hour battery"],
+        "ru": ["Высокое качество звука", "Чувствительный микрофон", "Батарея 6+ часа"],
+        "hy": ["Բարձր ձայն", "Նուրբ միկրոֆոն", "6+ ժամ մարտկոց"]
       },
       "icon": "Mic",
       "category": "audio",
@@ -113,25 +113,25 @@ const rentalsData = {
     {
       "id": 4,
       "names": {
-        "en": "Gaming Headset",
-        "ru": "Игровая гарнитура",
-        "hy": "Խաղային ականջակալ"
+        "en": "Micro Earpieces Pro",
+        "ru": "Микронаушник Pro",
+        "hy": "Միկրոականջակալ Pro"
       },
       "descriptions": {
-        "en": "High-quality gaming headset with surround sound for immersive experience.",
-        "ru": "Высококачественная игровая гарнитура с объемным звуком для погружения.",
-        "hy": "Բարձրորակ խաղային ականջակալ ծավալային ձայնով լիակատար փորձի համար:"
+        "en": "Perfect for interviews and challenging exams. Connect wirelessly via Bluetooth in seconds.",
+        "ru": "Идеально для собеседований и сложных экзаменов. Мгновенное беспроводное подключение через Bluetooth.",
+        "hy": "Իդեալական է հարցազրույցների և բարդ քննությունների համար։ Անլար միացում՝ Bluetooth-ի միջոցով՝ հաշված վայրկյաններում:"
       },
       "prices": {
-        "en": "From 2,500 AMD/day",
-        "ru": "От 2,500 драм/день",
-        "hy": "Սկսած 2,500 դրամ/օր"
+        "en": "From 6,000 AMD/day",
+        "ru": "От 6,000 драм/день",
+        "hy": "Սկսած 6,000 դրամ/օր"
       },
       "image": "/earbuds.jpg",
       "features": {
-        "en": ["7.1 surround sound", "RGB lighting", "Comfortable ear cups"],
-        "ru": ["7.1 объемный звук", "RGB подсветка", "Удобные амбушюры"],
-        "hy": ["7.1 ծավալային ձայն", "RGB լուսավորություն", "Հարմարավետ ակռաներ"]
+        "en": ["High-quality sound", "Very Sensitive microphone", "8+ hour battery"],
+        "ru": ["Высокое качество звука", "Очень чувствительный микрофон", "Батарея 8+ часа"],
+        "hy": ["Բարձր ձայն", "Շատ Նուրբ միկրոֆոն", "8+ ժամ մարտկոց"]
       },
       "icon": "Headphones",
       "category": "audio",
@@ -142,9 +142,9 @@ const rentalsData = {
     {
       "id": 5,
       "names": {
-        "en": "DSLR Camera",
-        "ru": "DSLR камера",
-        "hy": "DSLR ֆոտոապարատ"
+        "en": "Spy Micro Camera Basic",
+        "ru": "Скрытая микро-камера Basic",
+        "hy": "Անտեսանալի միկրո կամերա Basic"
       },
       "descriptions": {
         "en": "Professional photography for projects and assignments.",
@@ -156,6 +156,7 @@ const rentalsData = {
         "ru": "От 4,500 драм/день",
         "hy": "Սկսած 4,500 դրամ/օր"
       },
+      "image": "/usb-headset.jpg",
       "features": {
         "en": ["24MP sensor", "Full HD video", "Interchangeable lenses"],
         "ru": ["24MP сенсор", "Full HD видео", "Сменные объективы"],
@@ -220,19 +221,19 @@ const rentalsData = {
     {
       "id": 10,
       "names": {
-        "en": "Micro Camera",
-        "ru": "Микро-камера",
-        "hy": "Միկրո կամերա"
+        "en": "Spy Micro Camera Basic",
+        "ru": "Скрытая микро-камера Basic",
+        "hy": "Անտեսանալի միկրո կամերա Basic"
       },
       "descriptions": {
-        "en": "Ultra-compact recording device for discreet documentation and research.",
-        "ru": "Ультракомпактное записывающее устройство для дискретной документации и исследований.",
-        "hy": "Ուլտրակոմպակտ գրանցող սարք գաղտնի փաստագրման և հետազոտությունների համար:"
+        "en": "Micro camera for real-time recording with wireless Wi-Fi connection.",
+        "ru": "Микрокамера для записи в реальном времени с беспроводным подключением по Wi-Fi.",
+        "hy": "Միկրո կամերա՝ իրական ժամանակում online հետևելու համար՝ անլար Wi-Fi կապով:"
       },
       "prices": {
-        "en": "From 3,500 AMD/day",
-        "ru": "От 3,500 драм/день",
-        "hy": "Սկսած 3,500 դրամ/օր"
+        "en": "From 7,000 AMD/day",
+        "ru": "От 7,000 драм/день",
+        "hy": "Սկսած 7,000 դրամ/օր"
       },
       "features": {
         "en": ["Ultra-compact design", "HD video recording", "Long battery life", "Memory card included"],
@@ -331,19 +332,19 @@ const productsData = {
     {
       "id": 11,
       "names": {
-        "en": "Budget Earbuds",
-        "ru": "Бюджетные наушники",
-        "hy": "Բյուջետային ականջակալներ"
+        "en": "Micro Earpieces Croco",
+        "ru": "Микронаушник Croco",
+        "hy": "Միկրոականջակալ Croco"
       },
       "descriptions": {
-        "en": "Great value for everyday study sessions and commuting.",
-        "ru": "Отличное качество для ежедневных учебных сессий и поездок.",
-        "hy": "Մեծ արժեք ամենօրյա ուսումնական նիստերի և տեղափոխությունների համար:"
+        "en": "Perfect for students in exams. Connect wirelessly via Bluetooth in seconds.",
+        "ru": "Идеально для студентов на экзаменах и не только. Мгновенное беспроводное подключение через Bluetooth.",
+        "hy": "Իդեալական է քննությունների համար և ոչ միայն։ Անլար միացում՝ Bluetooth-ի միջոցով՝ հաշված վայրկյաններում:"
       },
       "prices": {
-        "en": "From 6,500 AMD",
-        "ru": "От 6,500 драм",
-        "hy": "Սկսած 6,500 դրամ"
+        "en": "From 23,000 AMD",
+        "ru": "От 23,000 драм",
+        "hy": "Սկսած 23,000 դրամ"
       },
       "image": "/earbuds.jpg",
       "badge": {
@@ -358,25 +359,25 @@ const productsData = {
     {
       "id": 12,
       "names": {
-        "en": "Refurbished Headphones",
-        "ru": "Восстановленные наушники",
-        "hy": "Վերանորոգված ականջակալներ"
+        "en": "Micro Earpieces PRO ",
+        "ru": "Микронаушники PRO",
+        "hy": "Միկրոականջակալ PRO"
       },
       "descriptions": {
-        "en": "Tested, cleaned, and guaranteed. Professional quality at student prices.",
-        "ru": "Протестированы, очищены и гарантированы. Профессиональное качество по студенческим ценам.",
-        "hy": "Փորձարկված, մաքրված և երաշխավորված: Պրոֆեսիոնալ որակ ուսանողական գներով:"
+        "en": "Perfect for students in exams. Connect wirelessly via Bluetooth in seconds.",
+        "ru": "Идеально для студентов на экзаменах и не только. Мгновенное беспроводное подключение через Bluetooth.",
+        "hy": "Իդեալական է քննությունների համար և ոչ միայն։ Անլար միացում՝ Bluetooth-ի միջոցով՝ հաշված վայրկյաններում:"
       },
       "prices": {
-        "en": "From 12,000 AMD",
-        "ru": "От 12,000 драм",
-        "hy": "Սկսած 12,000 դրամ"
+        "en": "From 30,000 AMD",
+        "ru": "От 30,000 драм",
+        "hy": "Սկսած 30,000 դրամ"
       },
       "image": "/studio-headphones.jpg",
       "badge": {
-        "en": "Refurbished",
-        "ru": "Восстановленный",
-        "hy": "Վերանորոգված"
+        "en": "New",
+        "ru": "Новый",
+        "hy": "Նոր"
       },
       "badgeColor": "bg-accent text-accent-foreground",
       "icon": "Wrench",
@@ -385,19 +386,19 @@ const productsData = {
     {
       "id": 13,
       "names": {
-        "en": "Audio Accessories",
-        "ru": "Аудио аксессуары",
-        "hy": "Աուդիո պարագաներ"
+        "en": "Micro Earpieces Light",
+        "ru": "Микронаушники Light",
+        "hy": "Միկրոականջակալ Light"
       },
       "descriptions": {
-        "en": "Adapters, hygiene covers, carrying cases, and replacement cables.",
-        "ru": "Адаптеры, гигиенические чехлы, чехлы для переноски и запасные кабели.",
-        "hy": "Ադապտերներ, հիգիենիկ ծածկեր, կրող պարկեր և փոխարինող լարեր:"
+        "en": "Perfect for students in exams. Connect wirelessly via Bluetooth in seconds.",
+        "ru": "Идеально для студентов на экзаменах и не только. Мгновенное беспроводное подключение через Bluetooth.",
+        "hy": "Իդեալական է քննությունների համար և ոչ միայն։ Անլար միացում՝ Bluetooth-ի միջոցով՝ հաշված վայրկյաններում:"
       },
       "prices": {
-        "en": "From 500 AMD",
-        "ru": "От 500 драм",
-        "hy": "Սկսած 500 դրամ"
+        "en": "From 30,000 AMD",
+        "ru": "От 30,000 драм",
+        "hy": "Սկսած 30,000 դրամ"
       },
       "image": null,
       "badge": {

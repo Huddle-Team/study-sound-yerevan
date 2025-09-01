@@ -3,19 +3,19 @@
     {
       "id": 1,
       "names": {
-        "en": "Budget Earbuds",
-        "ru": "Бюджетные наушники",
-        "hy": "Բյուջետային ականջակալներ"
+        "en": "Micro Earpieces Croco",
+        "ru": "Микронаушник Croco",
+        "hy": "Միկրոականջակալ Croco"
       },
       "descriptions": {
-        "en": "Great value for everyday study sessions and commuting.",
-        "ru": "Отличное качество для ежедневных учебных сессий и поездок.",
-        "hy": "Մեծ արժեք ամենօրյա ուսումնական նիստերի և տեղափոխությունների համար:"
+        "en": "Perfect for students in exams. Connect wirelessly via Bluetooth in seconds.",
+        "ru": "Идеально для студентов на экзаменах и не только. Мгновенное беспроводное подключение через Bluetooth.",
+        "hy": "Իդեալական է քննությունների համար և ոչ միայն։ Անլար միացում՝ Bluetooth-ի միջոցով՝ հաշված վայրկյաններում:"
       },
       "prices": {
-        "en": "From 6,500 AMD",
-        "ru": "От 6,500 драм",
-        "hy": "Սկսած 6,500 դրամ"
+        "en": "From 23000 AMD",
+        "ru": "От 23000 драм",
+        "hy": "Սկսած 23000 դրամ"
       },
       "image": "/src/assets/earbuds.jpg",
       "badge": {

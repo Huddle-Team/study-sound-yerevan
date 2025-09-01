@@ -3,14 +3,14 @@
     {
       "id": 1,
       "names": {
-        "en": "Noise-Cancelling Headphones",
-        "ru": "Наушники с шумоподавлением",
-        "hy": "Աղմուկ մարող ականջակալներ"
+        "en": "Micro Earpieces Basic",
+        "ru": "Микронаушник Basic",
+        "hy": "Միկրոականջակալ Basic"
       },
       "descriptions": {
-        "en": "Perfect for libraries and focus sessions. Block out distractions.",
-        "ru": "Идеально для библиотек и сеансов концентрации. Блокируйте отвлекающие факторы.",
-        "hy": "Կատարյալ գրադարանների և կենտրոնացման աշխատանքների համար: Արգելափակեք ուշադրության շեղումները:"
+        "en": "Perfect for students in exams. Connect wirelessly via Bluetooth in seconds.",
+        "ru": "Идеально для студентов на экзаменах и не только. Мгновенное беспроводное подключение через Bluetooth.",
+        "hy": "Իդեալական է քննությունների համար և ոչ միայն։ Անլար միացում՝ Bluetooth-ի միջոցով՝ հաշված վայրկյաններում:"
       },
       "prices": {
         "en": "From 3,000 AMD/day",
@@ -19,9 +19,9 @@
       },
       "image": "/src/assets/noise-cancelling.jpg",
       "features": {
-        "en": ["Active noise cancellation", "30+ hour battery", "Comfortable padding"],
-        "ru": ["Активное шумоподавление", "Батарея 30+ часов", "Удобные накладки"],
-        "hy": ["Ակտիվ աղմուկ մարում", "30+ ժամ մարտկոց", "Հարմարավետ պարկեր"]
+        "en": ["High-quality sound", "Sensitive microphone", "4+ hour battery"],
+        "ru": ["Высокое качество звука", "Чувствительный микрофон", "Батарея 4+ часа"],
+        "hy": ["Բարձր ձայն", "Նուրբ միկրոֆոն", "4+ ժամ մարտկոց"]
       },
       "icon": "Headphones",
       "category": "audio",
@@ -30,25 +30,25 @@
     {
       "id": 2,
       "names": {
-        "en": "Studio Headphones",
-        "ru": "Студийные наушники",
-        "hy": "Ստուդիայի ականջակալներ"
+        "en": "Micro Earpieces Croco",
+        "ru": "Микронаушник Croco",
+        "hy": "Միկրոականջակալ Croco"
       },
       "descriptions": {
-        "en": "Clean, neutral sound for editing and music practice.",
-        "ru": "Чистый, нейтральный звук для редактирования и музыкальной практики.",
-        "hy": "Մաքուր, չեզոք ձայն խմբագրման և երաժշտական պրակտիկայի համար:"
+        "en": "Perfect for students in exams. Connect wirelessly via Bluetooth in seconds.",
+        "ru": "Идеально для студентов на экзаменах и не только. Мгновенное беспроводное подключение через Bluetooth.",
+        "hy": "Իդեալական է քննությունների համար և ոչ միայն։ Անլար միացում՝ Bluetooth-ի միջոցով՝ հաշված վայրկյաններում:"
       },
       "prices": {
-        "en": "From 2,000 AMD/day",
-        "ru": "От 2,000 драм/день",
-        "hy": "Սկսած 2,000 դրամ/օր"
+        "en": "From 4,000 AMD/day",
+        "ru": "От 4,000 драм/день",
+        "hy": "Սկսած 4,000 դրամ/օր"
       },
       "image": "/src/assets/studio-headphones.jpg",
       "features": {
-        "en": ["Flat frequency response", "Open-back design", "Professional grade"],
-        "ru": ["Плоская частотная характеристика", "Открытая конструкция", "Профессиональный уровень"],
-        "hy": ["Հարթ հաճախությունային բնութագիր", "Բաց դիզայն", "Պրոֆեսիոնալ որակ"]
+        "en": ["High-quality sound", "Sensitive microphone", "4+ hour battery"],
+        "ru": ["Высокое качество звука", "Чувствительный микрофон", "Батарея 4+ часа"],
+        "hy": ["Բարձր ձայն", "Նուրբ միկրոֆոն", "4+ ժամ մարտկոց"]
       },
       "icon": "Volume2",
       "category": "audio",
@@ -57,19 +57,19 @@
     {
       "id": 3,
       "names": {
-        "en": "USB Headsets with Mic",
-        "ru": "USB-наушники с микрофоном",
-        "hy": "USB ականջակալներ բարձրախոսով"
+        "en": "Micro Earpieces Light",
+        "ru": "Микронаушник Light",
+        "hy": "Միկրոականջակալ Light"
       },
       "descriptions": {
-        "en": "Perfect for online classes, Zoom calls, and presentations.",
-        "ru": "Идеально для онлайн-уроков, Zoom-звонков и презентаций.",
-        "hy": "Կատարյալ օնլայն դասերի, Zoom զանգերի և ներկայացումների համար:"
+        "en": "Perfect for interviews and challenging exams.",
+        "ru": "Идеально для собеседований и сложных экзаменов.",
+        "hy": "Իդեալական է հարցազրույցների և բարդ քննությունների համար:"
       },
       "prices": {
-        "en": "From 3000 AMD/day",
-        "ru": "От 3000 драм/день",
-        "hy": "Սկսած 3000 դրամ/օր"
+        "en": "From 5000 AMD/day",
+        "ru": "От 5000 драм/день",
+        "hy": "Սկսած 5000 դրամ/օր"
       },
       "image": "/src/assets/usb-headset.jpg",
       "features": {
@@ -86,9 +86,9 @@
     {
       "id": 4,
       "names": {
-        "en": "DSLR Camera",
-        "ru": "DSLR камера",
-        "hy": "DSLR ֆոտոապարատ"
+        "en": "Spy Micro Camera Basic",
+        "ru": "Скрытая микро-камера Basic",
+        "hy": "Անտեսանալի միկրո կամերա Basic"
       },
       "descriptions": {
         "en": "Professional photography for projects and assignments.",
@@ -96,8 +96,8 @@
         "hy": "Պրոֆեսիոնալ ֆոտոգրաֆիա նախագծերի և առաջադրանքների համար:"
       },
       "prices": {
-        "en": "From 4,500 AMD/day",
-        "ru": "От 4,500 драм/день",
+        "en": "From 7,000 AMD/day",
+        "ru": "От 7,000 драм/день",
         "hy": "Սկսած 4,500 դրամ/օր"
       },
       "features": {
@@ -164,24 +164,24 @@
     {
       "id": 10,
       "names": {
-        "en": "Micro Camera",
-        "ru": "Микро-камера",
-        "hy": "Միկրո կամերա"
+        "en": "Spy Micro Camera Basic",
+        "ru": "Скрытая микро-камера Basic",
+        "hy": "Անտեսանալի միկրո կամերա Basic"
       },
       "descriptions": {
-        "en": "Ultra-compact recording device for discreet documentation and research.",
-        "ru": "Ультракомпактное записывающее устройство для дискретной документации и исследований.",
-        "hy": "Ուլտրակոմպակտ գրանցող սարք գաղտնի փաստագրման և հետազոտությունների համար:"
+        "en": "Micro camera for real-time recording with wireless Wi-Fi connection.",
+        "ru": "Микрокамера для записи в реальном времени с беспроводным подключением по Wi-Fi.",
+        "hy": "Միկրո կամերա՝ իրական ժամանակում online հետևելու համար՝ անլար Wi-Fi կապով:"
       },
       "prices": {
-        "en": "From 3,500 AMD/day",
-        "ru": "От 3,500 драм/день",
-        "hy": "Սկսած 3,500 դրամ/օր"
+        "en": "From 7000 AMD/day",
+        "ru": "От 7,000 драм/день",
+        "hy": "Սկսած 7,000 դրամ/օր"
       },
       "features": {
-        "en": ["Ultra-compact design", "HD video recording", "Long battery life", "Memory card included"],
-        "ru": ["Ультракомпактный дизайн", "HD видеозапись", "Долгое время автономной работы", "Карта памяти включена"],
-        "hy": ["Ուլտրակոմպակտ դիզայն", "HD տեսագրություն", "Երկար մարտկոցի կյանք", "Հիշողության քարտ ներառված"]
+        "en": ["Hidden system", "HD video recording", "Long battery life", "Memory card included"],
+        "ru": ["Скрытая система", "HD видеозапись", "Долгое время автономной работы", "Карта памяти включена"],
+        "hy": ["Անտեսանելի համակարգ", "HD տեսագրություն", "Երկար մարտկոցի կյանք", "SD քարտ ներառված"]
       },
       "icon": "Camera",
       "category": "camera",

@@ -11,16 +11,16 @@
     "accessories": "Accessories",
     "from": "From",
     "warranty": "warranty",
-    "includes": "Includes: case, cable, hygiene covers",
+    "includes": "Includes: 4× Magnetic Micro Beads, USB Charger, Magnetic Extractor, Induction Loop",
     "contact": "Contact",
     "hours": "Hours & Links",
     "legalUse": "Legal & ethical use only"
   },
   "contact": {
-    "phone": "+374 99 123 456",
-    "telegram": "https://t.me/spytechexamtools",
-    "whatsapp": "https://wa.me/37499123456",
-    "instagram": "https://instagram.com/spytechexamtools"
+    "phone": "+37491050034 +37433050034",
+    "telegram": "https://t.me/spytech_armenia",
+    "whatsapp": "https://wa.me/091050034",
+    "instagram": "https://instagram.com/spytech_armenia"
   },
   "modal": {
     "bookTitle": "Book Equipment",
@@ -83,17 +83,17 @@
     ]
   },
   "rentals": {
-    "title": "Available for Rent",
-    "subtitle": "Professional equipment for students at friendly daily rates",
+    "title": "For Rent",
+    "subtitle": "Professional equipment for people at friendly daily rates",
     "audioEquipment": "Spy Earpieces",
     "cameraEquipment": "Camera Equipment",
     "gpsNavigation": "GPS & Navigation"
   },
   "forSaleSection": {
-    "title": "Equipment for Sale",
+    "title": "For Sale",
     "subtitle": "Quality spy earpieces equipment you can own",
-    "audioEquipment": "Audio Equipment",
-    "cameraEquipment": "Camera Equipment",
+    "audioEquipment": "Micro Earpieces",
+    "cameraEquipment": "Micro Camera",
     "gpsNavigation": "GPS & Navigation"
   },
   "whyChooseUs": {
@@ -101,8 +101,8 @@
     "subtitle": "Trusted by people across Yerevan",
     "benefits": [
       {
-        "title": "Student pricing & discounts",
-        "description": "15% off rentals with valid student ID"
+        "title": "Exam Tools",
+        "description": "Perfect for Studying and Interviews"
       },
       {
         "title": "Cleaned & sanitized after every use",
@@ -126,7 +126,7 @@
   },
   "booking": {
     "title": "Need Help Choosing?",
-    "subtitle": "Book a consultation call and our experts will help you find the perfect audio equipment for your needs.",
+    "subtitle": "Book a consultation call and our experts will help you find the perfect equipment for your needs.",
     "bookCall": "Book a Call",
     "name": "Full Name",
     "email": "Email Address",
@@ -187,7 +187,7 @@
     ]
   },
   "footer": {
-    "description": "Affordable, legal audio gear for students in Yerevan. Rent or buy headphones for study, calls, and content creation.",
+    "description": "Affordable, micro Exam Tools for people in Yerevan. Rent or buy headphones for study, calls, and content creation.",
     "phone": "+37491050034",
     "email": "hello@spytech.am",
     "telegram": "Telegram & WhatsApp",
@@ -196,8 +196,8 @@
     "hours": "Mon–Sat 11:00–19:00",
     "terms": "Terms of Service",
     "privacy": "Privacy Policy",
-    "copyright": "© 2024 SpyTech Student Audio. All rights reserved.",
-    "tagline": "Serving students in Yerevan with quality audio gear.",
+    "copyright": "© 2024 SpyTech Armenia. All rights reserved.",
+    "tagline": "We offer high-quality microtechnics in Yerevan.",
     "language": "Language"
   }
 }
