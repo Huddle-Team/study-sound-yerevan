@@ -30,6 +30,7 @@ app.use(helmet());
 app.use(cors({
   origin: [
     'https://spytech.am',      // Production domain
+    'https://api.spytech.am',  // API subdomain
     'http://localhost:5173',  // Vite dev server
     'http://localhost:4173',  // Vite preview
     'https://localhost:5173', // HTTPS dev
