@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { toast } from "sonner";
+import { submitBooking } from "@/lib/api";
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -90,7 +91,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
     return '';
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Validate inputs
@@ -134,8 +135,37 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
       }
     }
 
-    // Simulate form submission
-    setShowSuccessMessage(true);
+    // Send data to backend API
+    const bookingData = {
+      fullName: formData.fullName,
+      phoneNumber: formData.phoneNumber,
+      selectedActionType: formData.selectedActionType as 'rent' | 'buy',
+      selectedRentItem: formData.selectedRentItem || undefined,
+      selectedSaleItem: formData.selectedSaleItem || undefined,
+      productName: productName
+    };
+
+    // Show loading state
+    const loadingToast = toast.loading('Sending booking request...');
+
+    try {
+      const result = await submitBooking(bookingData);
+      
+      if (result.success) {
+        toast.dismiss(loadingToast);
+        toast.success(result.message || 'Booking request sent successfully!');
+        setShowSuccessMessage(true);
+      } else {
+        toast.dismiss(loadingToast);
+        toast.error(result.error || 'Failed to send booking request. Please try again or contact us directly.');
+        return;
+      }
+    } catch (error) {
+      console.error('Error sending booking:', error);
+      toast.dismiss(loadingToast);
+      toast.error('Failed to send booking request. Please try again or contact us directly.');
+      return;
+    }
     
     // Reset form after 3 seconds and close modal
     setTimeout(() => {

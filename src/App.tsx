@@ -3,6 +3,7 @@ import { LanguageProvider } from '@/contexts/LanguageContext';
 import { GPSProvider } from '@/contexts/GPSContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
+import BackendTest from '@/components/BackendTest';
 import Index from '@/pages/Index';
 import NotFound from '@/pages/NotFound';
 
@@ -17,6 +18,7 @@ const App = () => {
               <Route path="*" element={<NotFound />} />
             </Routes>
             <Toaster />
+            <BackendTest />
           </div>
         </Router>
       </GPSProvider>

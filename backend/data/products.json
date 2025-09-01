@@ -1,0 +1,271 @@
+{
+  "audioSaleItems": [
+    {
+      "id": 1,
+      "names": {
+        "en": "Micro Earpieces Croco",
+        "ru": "Микронаушник Croco",
+        "hy": "Միկրոականջակալ Croco"
+      },
+      "descriptions": {
+        "en": "Perfect for students in exams. Connect wirelessly via Bluetooth in seconds.",
+        "ru": "Идеально для студентов на экзаменах и не только. Мгновенное беспроводное подключение через Bluetooth.",
+        "hy": "Իդեալական է քննությունների համար և ոչ միայն։ Անլար միացում՝ Bluetooth-ի միջոցով՝ հաշված վայրկյաններում:"
+      },
+      "prices": {
+        "en": "From 23000 AMD",
+        "ru": "От 23000 драм",
+        "hy": "Սկսած 23000 դրամ"
+      },
+      "image": "/src/assets/earbuds.jpg",
+      "badge": {
+        "en": "New",
+        "ru": "Новый",
+        "hy": "Նոր"
+      },
+      "badgeColor": "bg-success text-success-foreground",
+      "icon": "Headphones",
+      "category": "audio"
+    },
+    {
+      "id": 2,
+      "names": {
+        "en": "Refurbished Headphones",
+        "ru": "Восстановленные наушники",
+        "hy": "Վերանորոգված ականջակալներ"
+      },
+      "descriptions": {
+        "en": "Tested, cleaned, and guaranteed. Professional quality at student prices.",
+        "ru": "Протестированы, очищены и гарантированы. Профессиональное качество по студенческим ценам.",
+        "hy": "Փորձարկված, մաքրված և երաշխավորված: Պրոֆեսիոնալ որակ ուսանողական գներով:"
+      },
+      "prices": {
+        "en": "From 12,000 AMD",
+        "ru": "От 12,000 драм",
+        "hy": "Սկսած 12,000 դրամ"
+      },
+      "image": "/src/assets/studio-headphones.jpg",
+      "badge": {
+        "en": "Refurbished",
+        "ru": "Восстановленный",
+        "hy": "Վերանորոգված"
+      },
+      "badgeColor": "bg-accent text-accent-foreground",
+      "icon": "Wrench",
+      "category": "audio"
+    },
+    {
+      "id": 3,
+      "names": {
+        "en": "Audio Accessories",
+        "ru": "Аудио аксессуары",
+        "hy": "Աուդիո պարագաներ"
+      },
+      "descriptions": {
+        "en": "Adapters, hygiene covers, carrying cases, and replacement cables.",
+        "ru": "Адаптеры, гигиенические чехлы, чехлы для переноски и запасные кабели.",
+        "hy": "Ադապտերներ, հիգիենիկ ծածկեր, կրող պարկեր և փոխարինող լարեր:"
+      },
+      "prices": {
+        "en": "From 500 AMD",
+        "ru": "От 500 драм",
+        "hy": "Սկսած 500 դրամ"
+      },
+      "image": null,
+      "badge": {
+        "en": "Accessories",
+        "ru": "Аксессуары",
+        "hy": "Պարագաներ"
+      },
+      "badgeColor": "bg-muted text-muted-foreground",
+      "icon": "Package",
+      "category": "audio"
+    }
+  ],
+  "cameraSaleItems": [
+    {
+      "id": 4,
+      "names": {
+        "en": "Mirrorless Camera (Used)",
+        "ru": "Беззеркальная камера (б/у)",
+        "hy": "Անանգեսային ֆոտոապարատ (օգտագործված)"
+      },
+      "descriptions": {
+        "en": "Excellent condition with original packaging and accessories.",
+        "ru": "Отличное состояние с оригинальной упаковкой и аксессуарами.",
+        "hy": "Գերազանց վիճակ բնօրինակ փաթեթավորմամբ և պարագաներով:"
+      },
+      "prices": {
+        "en": "From 85,000 AMD",
+        "ru": "От 85,000 драм",
+        "hy": "Սկսած 85,000 դրամ"
+      },
+      "image": null,
+      "badge": {
+        "en": "Used",
+        "ru": "Б/у",
+        "hy": "Օգտագործված"
+      },
+      "badgeColor": "bg-accent text-accent-foreground",
+      "icon": "Camera",
+      "warranty": {
+        "en": "6 month warranty",
+        "ru": "6 месяцев гарантии",
+        "hy": "6 ամիս երաշխիք"
+      },
+      "category": "camera"
+    },
+    {
+      "id": 5,
+      "names": {
+        "en": "Action Camera (New)",
+        "ru": "Экшн-камера (новая)",
+        "hy": "Գործողության ֆոտոապարատ (նոր)"
+      },
+      "descriptions": {
+        "en": "Latest model with 4K recording capability and accessories.",
+        "ru": "Последняя модель с возможностью записи 4K и аксессуарами.",
+        "hy": "Վերջին մոդել 4K գրանցման հնարավորությամբ և պարագաներով:"
+      },
+      "prices": {
+        "en": "From 45,000 AMD",
+        "ru": "От 45,000 драм",
+        "hy": "Սկսած 45,000 դրամ"
+      },
+      "image": null,
+      "badge": {
+        "en": "New",
+        "ru": "Новый",
+        "hy": "Նոր"
+      },
+      "badgeColor": "bg-success text-success-foreground",
+      "icon": "Video",
+      "warranty": {
+        "en": "1 year warranty",
+        "ru": "1 год гарантии",
+        "hy": "1 տարի երաշխիք"
+      },
+      "category": "camera"
+    },
+    {
+      "id": 6,
+      "names": {
+        "en": "Camera Accessories",
+        "ru": "Аксессуары для камеры",
+        "hy": "Ֆոտոապարատի պարագաներ"
+      },
+      "descriptions": {
+        "en": "Tripods, memory cards, lens filters, cases and more.",
+        "ru": "Штативы, карты памяти, фильтры для объективов, чехлы и многое другое.",
+        "hy": "Եռոտանիներ, հիշողության քարտեր, ոսպնյակների ֆիլտրեր, պարկեր և ավելին:"
+      },
+      "prices": {
+        "en": "From 2,500 AMD",
+        "ru": "От 2,500 драм",
+        "hy": "Սկսած 2,500 դրամ"
+      },
+      "image": null,
+      "badge": {
+        "en": "Accessories",
+        "ru": "Аксессуары",
+        "hy": "Պարագաներ"
+      },
+      "badgeColor": "bg-muted text-muted-foreground",
+      "icon": "Package",
+      "category": "camera"
+    }
+  ],
+  "gpsSaleItems": [
+    {
+      "id": 7,
+      "names": {
+        "en": "Professional GPS (Refurb)",
+        "ru": "Профессиональный GPS (восст.)",
+        "hy": "Պրոֆեսիոնալ GPS (վերանոր.)"
+      },
+      "descriptions": {
+        "en": "High-precision navigation unit, tested and cleaned.",
+        "ru": "Высокоточный навигационный блок, протестированный и очищенный.",
+        "hy": "Բարձրճշգրիտ նավիգացիոն միավոր, փորձարկված և մաքրված:"
+      },
+      "prices": {
+        "en": "From 65,000 AMD",
+        "ru": "От 65,000 драм",
+        "hy": "Սկսած 65,000 դրամ"
+      },
+      "image": null,
+      "badge": {
+        "en": "Refurbished",
+        "ru": "Восстановленный",
+        "hy": "Վերանորոգված"
+      },
+      "badgeColor": "bg-accent text-accent-foreground",
+      "icon": "MapPin",
+      "warranty": {
+        "en": "3 month warranty",
+        "ru": "3 месяца гарантии",
+        "hy": "3 ամիս երաշխիք"
+      },
+      "category": "gps"
+    },
+    {
+      "id": 8,
+      "names": {
+        "en": "Car Navigator (New)",
+        "ru": "Автомобильный навигатор (новый)",
+        "hy": "Ավտոմեքենայի նավիգատոր (նոր)"
+      },
+      "descriptions": {
+        "en": "Latest maps and traffic updates included in the package.",
+        "ru": "Последние карты и обновления трафика включены в пакет.",
+        "hy": "Վերջին քարտեզներն ու երթևեկության թարմացումները ներառված են փաթեթում:"
+      },
+      "prices": {
+        "en": "From 28,000 AMD",
+        "ru": "От 28,000 драм",
+        "hy": "Սկսած 28,000 դրամ"
+      },
+      "image": null,
+      "badge": {
+        "en": "New",
+        "ru": "Новый",
+        "hy": "Նոր"
+      },
+      "badgeColor": "bg-success text-success-foreground",
+      "icon": "Navigation",
+      "warranty": {
+        "en": "2 year warranty",
+        "ru": "2 года гарантии",
+        "hy": "2 տարի երաշխիք"
+      },
+      "category": "gps"
+    },
+    {
+      "id": 9,
+      "names": {
+        "en": "GPS Accessories",
+        "ru": "GPS аксессуары",
+        "hy": "GPS պարագաներ"
+      },
+      "descriptions": {
+        "en": "Mounts, cases, chargers, memory cards and more.",
+        "ru": "Крепления, чехлы, зарядные устройства, карты памяти и многое другое.",
+        "hy": "Ամրակներ, պարկեր, լիցքավորիչներ, հիշողության քարտեր և ավելին:"
+      },
+      "prices": {
+        "en": "From 1,800 AMD",
+        "ru": "От 1,800 драм",
+        "hy": "Սկսած 1,800 դրամ"
+      },
+      "image": null,
+      "badge": {
+        "en": "Accessories",
+        "ru": "Аксессуары",
+        "hy": "Պարագաներ"
+      },
+      "badgeColor": "bg-muted text-muted-foreground",
+      "icon": "Package",
+      "category": "gps"
+    }
+  ]
+}

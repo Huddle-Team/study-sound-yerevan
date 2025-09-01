@@ -1,0 +1,35 @@
+# Node modules
+node_modules
+npm-debug.log*
+
+# Environment files (will be provided separately)
+.env.example
+
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Coverage
+coverage
+
+# Temporary files
+tmp
+temp
