@@ -11,11 +11,15 @@ COPY package*.json ./
 RUN npm ci --only=production
 
 # Copy application code
+COPY server-https.js server.js
 COPY . .
 
 # Create data directory and copy data files
 RUN mkdir -p data
 COPY data/ ./data/
+
+# Create SSL directory for certificates
+RUN mkdir -p ssl
 
 # Create non-root user for security
 RUN addgroup -g 1001 -S nodejs
@@ -25,8 +29,8 @@ RUN adduser -S spytech -u 1001
 RUN chown -R spytech:nodejs /app
 USER spytech
 
-# Expose port
-EXPOSE 3001
+# Expose both HTTP and HTTPS ports
+EXPOSE 3001 3443
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
