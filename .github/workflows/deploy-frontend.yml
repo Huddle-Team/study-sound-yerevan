@@ -57,11 +57,15 @@ jobs:
         echo "✅ Successfully deployed to S3"
 
     - name: Invalidate CloudFront
-      if: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID != '' }}
       run: |
-        echo "🔄 Invalidating CloudFront distribution: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}"
-        aws cloudfront create-invalidation \
-          --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
-          --paths "/*"
-        echo "✅ CloudFront cache invalidated"
-        echo "🌐 Website will be live at: https://spytech.am"
+        if [ ! -z "${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}" ]; then
+          echo "🔄 Invalidating CloudFront distribution: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}"
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
+          echo "✅ CloudFront cache invalidated"
+          echo "🌐 Website will be live at: https://spytech.am"
+        else
+          echo "ℹ️  No CloudFront distribution ID provided, skipping cache invalidation"
+          echo "🌐 Website will be live directly from S3"
+        fi
