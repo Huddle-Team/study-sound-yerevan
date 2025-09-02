@@ -230,12 +230,12 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="modal-content-responsive sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle className="text-xl font-semibold">
+          <DialogTitle className="heading-responsive text-xl font-semibold">
             {getModalTitle()}
             {productName && (
-              <span className="block text-sm text-muted-foreground font-normal mt-1">
+              <span className="block text-sm text-muted-foreground font-normal mt-1 translation-safe">
                 {productName}
               </span>
             )}
@@ -259,7 +259,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="fullName">{t('modal.fullName')}</Label>
+              <Label htmlFor="fullName" className="label-responsive">{t('modal.fullName')}</Label>
               <Input
                 id="fullName"
                 type="text"
@@ -275,7 +275,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="phoneNumber">{t('modal.phoneNumber')}</Label>
+              <Label htmlFor="phoneNumber" className="label-responsive">{t('modal.phoneNumber')}</Label>
               <Input
                 id="phoneNumber"
                 type="tel"
@@ -293,7 +293,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
             {/* Show action type selector only for book action */}
             {actionType === 'book' && (
               <div className="space-y-2">
-                <Label htmlFor="actionType">{t('modal.actionType')}</Label>
+                <Label htmlFor="actionType" className="label-responsive">{t('modal.actionType')}</Label>
                 <Select value={formData.selectedActionType} onValueChange={(value) => handleInputChange('selectedActionType', value)}>
                   <SelectTrigger id="actionType">
                     <SelectValue placeholder={t('modal.actionTypePlaceholder')} />
@@ -375,13 +375,13 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
                 type="button"
                 variant="outline"
                 onClick={onClose}
-                className="flex-1"
+                className="flex-1 button-text-safe"
               >
                 {t('modal.cancel')}
               </Button>
               <Button
                 type="submit"
-                className="flex-1"
+                className="flex-1 button-text-safe"
               >
                 {getSubmitButtonText()}
               </Button>

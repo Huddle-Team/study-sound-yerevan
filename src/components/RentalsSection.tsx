@@ -65,7 +65,7 @@ const RentalsSection = () => {
     const IconComponent = iconMap[rental.icon as keyof typeof iconMap] || Package;
     
     return (
-      <Card key={rental.id} className="overflow-hidden hover:shadow-lg transition-all duration-300 border-0 shadow-md h-full flex flex-col">
+      <Card key={rental.id} className="overflow-hidden hover:shadow-lg transition-all duration-300 border-0 shadow-md h-full flex flex-col card-content-responsive">
         <CardHeader className="p-0">
           <div className="relative">
             {hasImage && rental.image ? (
@@ -79,15 +79,15 @@ const RentalsSection = () => {
                 <IconComponent className="w-16 h-16 text-primary" />
               </div>
             )}
-            <Badge className="absolute top-4 left-4 bg-accent text-accent-foreground">
+            <Badge className="absolute top-4 left-4 bg-accent text-accent-foreground translation-safe">
               {t('common.forRent')}
             </Badge>
           </div>
         </CardHeader>
         
         <CardContent className="p-6 flex-grow">
-          <CardTitle className="text-xl mb-2 text-foreground">{rental.name}</CardTitle>
-          <p className="text-muted-foreground mb-4">{rental.description}</p>
+          <CardTitle className="heading-responsive text-xl mb-2 text-foreground">{rental.name}</CardTitle>
+          <p className="text-muted-foreground mb-4 description-responsive">{rental.description}</p>
           
           <div className="space-y-2">
             {rental.features.map((feature: string, index: number) => (
@@ -124,16 +124,16 @@ const RentalsSection = () => {
 
   return (
     <section id="rentals" className="py-20 bg-secondary/20">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto container-responsive">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">{t('rentals.title')}</h2>
-          <p className="text-xl text-muted-foreground">
+          <h2 className="title-responsive font-bold text-foreground mb-4">{t('rentals.title')}</h2>
+          <p className="subtitle-responsive text-muted-foreground">
             {t('rentals.subtitle')}
           </p>
         </div>
 
         {/* All Equipment in One Section */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid-responsive">
           {/* Audio Equipment */}
           {rentals.audio && rentals.audio.map((rental) => renderRentalCard(rental, true))}
           

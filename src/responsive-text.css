@@ -1,0 +1,292 @@
+/* Responsive text handling for long Armenian and Russian text */
+
+/* Base responsive text utilities */
+.text-responsive {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+/* For headings and titles */
+.heading-responsive {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+  .heading-responsive {
+    line-height: 1.3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-responsive {
+    line-height: 1.4;
+  }
+}
+
+/* For buttons with potentially long text */
+.btn-responsive {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  text-align: center;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .btn-responsive {
+    white-space: nowrap;
+    min-height: auto;
+  }
+}
+
+/* For form labels */
+.label-responsive {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  display: block;
+  width: 100%;
+}
+
+/* For card content */
+.card-content-responsive {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
+/* For navigation items */
+.nav-responsive {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .nav-responsive {
+    white-space: nowrap;
+  }
+}
+
+/* For modal content */
+.modal-content-responsive {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* For select dropdowns */
+.select-responsive {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* For paragraphs and descriptions */
+.description-responsive {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+}
+
+@media (min-width: 640px) {
+  .description-responsive {
+    line-height: 1.7;
+  }
+}
+
+/* Specific fixes for long Armenian/Russian text */
+.armenian-text, .russian-text {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-feature-settings: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* Container improvements for better text flow */
+.container-responsive {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (min-width: 640px) {
+  .container-responsive {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-responsive {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Grid improvements for responsive cards */
+.grid-responsive {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .grid-responsive {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-responsive {
+    gap: 2rem;
+  }
+}
+
+/* Flex improvements for buttons and actions */
+.flex-responsive {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+@media (min-width: 640px) {
+  .flex-responsive {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Hero section specific improvements */
+.hero-responsive {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-responsive {
+    text-align: left;
+  }
+}
+
+/* Title responsive scaling */
+.title-responsive {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  font-size: 1.875rem; /* 30px */
+  line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+  .title-responsive {
+    font-size: 2.25rem; /* 36px */
+    line-height: 1.3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title-responsive {
+    font-size: 3rem; /* 48px */
+    line-height: 1.1;
+  }
+}
+
+@media (min-width: 1280px) {
+  .title-responsive {
+    font-size: 3.75rem; /* 60px */
+    line-height: 1.1;
+  }
+}
+
+/* Subtitle responsive scaling */
+.subtitle-responsive {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-size: 1rem; /* 16px */
+  line-height: 1.6;
+}
+
+@media (min-width: 640px) {
+  .subtitle-responsive {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.7;
+  }
+}
+
+@media (min-width: 1024px) {
+  .subtitle-responsive {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.6;
+  }
+}
+
+/* For long translation strings */
+.translation-safe {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Button text improvements for long text */
+.button-text-safe {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.4;
+  padding: 0.5rem 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .button-text-safe {
+    font-size: 1rem; /* 16px */
+    line-height: 1.2;
+    white-space: nowrap;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Form field text improvements */
+.form-text-responsive {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+
+/* Select dropdown improvements */
+.select-text-responsive {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+@media (max-width: 639px) {
+  .select-text-responsive {
+    white-space: normal;
+    height: auto;
+    min-height: 2.5rem;
+  }
+}

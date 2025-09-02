@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto container-responsive py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
           <img 
@@ -40,13 +40,13 @@ const Header = () => {
         <nav className="hidden md:flex items-center gap-6">
           <button 
             onClick={scrollToRentals}
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors nav-responsive"
           >
             {t('navigation.rentals')}
           </button>
           <button 
             onClick={() => document.getElementById('for-sale')?.scrollIntoView({ behavior: 'smooth' })}
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors nav-responsive"
           >
             {t('navigation.forSale')}
           </button>
