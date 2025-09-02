@@ -29,59 +29,122 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border ${getLanguageClass()}`}>
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-3">
-          <img 
-            src="/lovable-uploads/e6dd464b-2ef6-448d-bfd1-275f6f65b1ed.png" 
-            alt="SpyTech Student Audio Logo" 
-            className="w-10 h-10"
-          />
-          <div>
-            <h1 className="text-xl font-bold text-foreground">SpyTech</h1>
-            <p className="text-xs text-muted-foreground">Exam Tools</p>
+      <div className="max-w-6xl mx-auto px-6 py-4">
+        {/* Desktop Layout */}
+        <div className="hidden md:flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center gap-3">
+            <img 
+              src="/lovable-uploads/e6dd464b-2ef6-448d-bfd1-275f6f65b1ed.png" 
+              alt="SpyTech Student Audio Logo" 
+              className="w-10 h-10"
+            />
+            <div>
+              <h1 className="text-xl font-bold text-foreground">SpyTech</h1>
+              <p className="text-xs text-muted-foreground">Exam Tools</p>
+            </div>
+          </div>
+
+          {/* Navigation */}
+          <nav className="flex items-center gap-6">
+            <button 
+              onClick={scrollToRentals}
+              className="nav-responsive text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {t('navigation.rentals')}
+            </button>
+            <button 
+              onClick={() => document.getElementById('for-sale')?.scrollIntoView({ behavior: 'smooth' })}
+              className="nav-responsive text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {t('navigation.forSale')}
+            </button>
+            <button 
+              onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })}
+              className="nav-responsive text-muted-foreground hover:text-foreground transition-colors"
+            >
+              FAQ
+            </button>
+            <button 
+              onClick={scrollToFooter}
+              className="nav-responsive text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {t('common.contact')}
+            </button>
+          </nav>
+
+          {/* Language Selector and CTA Button */}
+          <div className="flex items-center gap-3">
+            <LanguageSelector />
+            <Button 
+              variant="default" 
+              size="sm" 
+              onClick={openBookingModal}
+              className="btn-responsive rounded-lg"
+            >
+              {t('cta.bookNow')}
+            </Button>
           </div>
         </div>
 
-        {/* Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
-          <button 
-            onClick={scrollToRentals}
-            className="nav-responsive text-muted-foreground hover:text-foreground transition-colors"
-          >
-            {t('navigation.rentals')}
-          </button>
-          <button 
-            onClick={() => document.getElementById('for-sale')?.scrollIntoView({ behavior: 'smooth' })}
-            className="nav-responsive text-muted-foreground hover:text-foreground transition-colors"
-          >
-            {t('navigation.forSale')}
-          </button>
-          <button 
-            onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })}
-            className="nav-responsive text-muted-foreground hover:text-foreground transition-colors"
-          >
-            FAQ
-          </button>
-          <button 
-            onClick={scrollToFooter}
-            className="nav-responsive text-muted-foreground hover:text-foreground transition-colors"
-          >
-            {t('common.contact')}
-          </button>
-        </nav>
+        {/* Mobile Layout */}
+        <div className="md:hidden">
+          {/* Mobile Header */}
+          <div className="flex items-center justify-between mb-4">
+            {/* Logo */}
+            <div className="flex items-center gap-3">
+              <img 
+                src="/lovable-uploads/e6dd464b-2ef6-448d-bfd1-275f6f65b1ed.png" 
+                alt="SpyTech Student Audio Logo" 
+                className="w-8 h-8"
+              />
+              <div>
+                <h1 className="text-lg font-bold text-foreground">SpyTech</h1>
+                <p className="text-xs text-muted-foreground">Exam Tools</p>
+              </div>
+            </div>
 
-        {/* Language Selector and CTA Button */}
-        <div className="flex items-center gap-3">
-          <LanguageSelector />
-          <Button 
-            variant="default" 
-            size="sm" 
-            onClick={openBookingModal}
-            className="btn-responsive rounded-lg"
-          >
-            {t('cta.bookNow')}
-          </Button>
+            {/* Mobile Actions */}
+            <div className="flex items-center gap-2">
+              <LanguageSelector />
+              <Button 
+                variant="default" 
+                size="sm" 
+                onClick={openBookingModal}
+                className="btn-responsive rounded-lg text-xs px-2 py-1"
+              >
+                {t('cta.bookNow')}
+              </Button>
+            </div>
+          </div>
+
+          {/* Mobile Navigation */}
+          <nav className="flex flex-wrap justify-center gap-4 pb-2">
+            <button 
+              onClick={scrollToRentals}
+              className="nav-responsive text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded"
+            >
+              {t('navigation.rentals')}
+            </button>
+            <button 
+              onClick={() => document.getElementById('for-sale')?.scrollIntoView({ behavior: 'smooth' })}
+              className="nav-responsive text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded"
+            >
+              {t('navigation.forSale')}
+            </button>
+            <button 
+              onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })}
+              className="nav-responsive text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded"
+            >
+              FAQ
+            </button>
+            <button 
+              onClick={scrollToFooter}
+              className="nav-responsive text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded"
+            >
+              {t('common.contact')}
+            </button>
+          </nav>
         </div>
       </div>
 

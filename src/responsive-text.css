@@ -108,12 +108,23 @@
   white-space: normal;
   text-align: center;
   font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
 }
 
 @media (min-width: 768px) {
   .nav-responsive {
     white-space: nowrap;
     font-size: 0.875rem;
+    padding: 0.25rem 0.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-responsive {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
   }
 }
 
