@@ -35,6 +35,13 @@ const RentalsSection = () => {
     setModalOpen(true);
   };
 
+  // Get language-specific class
+  const getLanguageClass = () => {
+    if (language === 'hy') return 'armenian-text';
+    if (language === 'ru') return 'russian-text';
+    return '';
+  };
+
   const handleRentWithGPS = async (item: any) => {
     if (item.gpsTracking) {
       try {
@@ -65,7 +72,7 @@ const RentalsSection = () => {
     const IconComponent = iconMap[rental.icon as keyof typeof iconMap] || Package;
     
     return (
-      <Card key={rental.id} className="overflow-hidden hover:shadow-lg transition-all duration-300 border-0 shadow-md h-full flex flex-col card-content-responsive">
+      <Card key={rental.id} className="overflow-hidden hover:shadow-lg transition-all duration-300 border-0 shadow-md h-full flex flex-col">
         <CardHeader className="p-0">
           <div className="relative">
             {hasImage && rental.image ? (
@@ -79,21 +86,21 @@ const RentalsSection = () => {
                 <IconComponent className="w-16 h-16 text-primary" />
               </div>
             )}
-            <Badge className="absolute top-4 left-4 bg-accent text-accent-foreground translation-safe">
+            <Badge className="absolute top-4 left-4 bg-accent text-accent-foreground">
               {t('common.forRent')}
             </Badge>
           </div>
         </CardHeader>
         
         <CardContent className="p-6 flex-grow">
-          <CardTitle className="heading-responsive text-xl mb-2 text-foreground">{rental.name}</CardTitle>
-          <p className="text-muted-foreground mb-4 description-responsive">{rental.description}</p>
+          <CardTitle className="subtitle-responsive mb-2 text-foreground">{rental.name}</CardTitle>
+          <p className="text-responsive text-muted-foreground mb-4">{rental.description}</p>
           
           <div className="space-y-2">
             {rental.features.map((feature: string, index: number) => (
               <div key={index} className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-sm text-muted-foreground">{feature}</span>
+                <span className="text-responsive text-muted-foreground">{feature}</span>
               </div>
             ))}
           </div>
@@ -101,8 +108,8 @@ const RentalsSection = () => {
         
         <CardFooter className="p-6 pt-0 mt-auto">
           <div className="w-full">
-            <div className="text-2xl font-bold text-primary mb-2">{rental.price}</div>
-            <p className="text-xs text-muted-foreground mb-3">
+            <div className="subtitle-responsive font-bold text-primary mb-2">{rental.price}</div>
+            <p className="text-responsive text-muted-foreground mb-3">
               {rental.id === 10 
                 ? spyMicroCameraBasic2.includes[language] || spyMicroCameraBasic2.includes.en
                 : t('common.includes')
@@ -111,7 +118,7 @@ const RentalsSection = () => {
             <Button 
               onClick={() => handleRentClick(rental)}
               size="sm" 
-              className="w-full"
+              className="btn-responsive w-full"
               variant="outline"
             >
               {t('common.rent')}
@@ -123,8 +130,8 @@ const RentalsSection = () => {
   };
 
   return (
-    <section id="rentals" className="py-20 bg-secondary/20">
-      <div className="max-w-6xl mx-auto container-responsive">
+    <section id="rentals" className={`py-20 bg-secondary/20 ${getLanguageClass()}`}>
+      <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="title-responsive font-bold text-foreground mb-4">{t('rentals.title')}</h2>
           <p className="subtitle-responsive text-muted-foreground">
@@ -133,7 +140,7 @@ const RentalsSection = () => {
         </div>
 
         {/* All Equipment in One Section */}
-        <div className="grid-responsive">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Audio Equipment */}
           {rentals.audio && rentals.audio.map((rental) => renderRentalCard(rental, true))}
           
