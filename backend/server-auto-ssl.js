@@ -25,22 +25,10 @@ try {
   console.warn('⚠️  Warning: Could not load product data files:', error.message);
 }
 
-// Security middleware
-app.use(helmet({
-  contentSecurityPolicy: {
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "'unsafe-eval'", "'unsafe-inline'", "blob:"],
-      styleSrc: ["'self'", "'unsafe-inline'", "fonts.googleapis.com"],
-      fontSrc: ["'self'", "fonts.gstatic.com"],
-      imgSrc: ["'self'", "data:", "https:", "blob:"],
-      connectSrc: ["'self'", "ws:", "wss:", "https:", "http:"],
-      objectSrc: ["'none'"],
-      mediaSrc: ["'self'"],
-      frameSrc: ["'self'"]
-    }
-  }
-}));
+// Security middleware - Disabled for development
+// app.use(helmet({
+//   contentSecurityPolicy: false, // Disable CSP completely for development
+// }));
 app.use(cors({
   origin: [
     'https://spytech.am',      // Production domain
