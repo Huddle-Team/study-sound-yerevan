@@ -1,6 +1,5 @@
 import { Phone, MapPin, Clock, MessageCircle, Instagram } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import LanguageSelector from "./LanguageSelector";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -87,10 +86,6 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <Clock className="w-4 h-4" />
                 <span className="text-sm">24/7</span>
-              </div>
-              <div className="pt-4">
-                <h5 className="text-sm font-semibold mb-2">{t('footer.language')}</h5>
-                <LanguageSelector />
               </div>
             </div>
           </div>

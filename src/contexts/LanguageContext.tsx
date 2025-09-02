@@ -17,7 +17,7 @@ export const languageNames: Record<Language, string> = {
 };
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>('hy');
   const [translations, setTranslations] = useState<Record<string, any>>({});
 
   // Load translations for current language

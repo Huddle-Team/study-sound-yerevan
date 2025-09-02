@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import BookingModal from "./BookingModal";
+import LanguageSelector from "./LanguageSelector";
 import { useState } from "react";
 
 const Header = () => {
@@ -63,15 +64,18 @@ const Header = () => {
           </button>
         </nav>
 
-        {/* CTA Button */}
-        <Button 
-          variant="default" 
-          size="sm" 
-          onClick={openBookingModal}
-          className="rounded-lg"
-        >
-          {t('cta.bookNow')}
-        </Button>
+        {/* Language Selector and CTA Button */}
+        <div className="flex items-center gap-3">
+          <LanguageSelector />
+          <Button 
+            variant="default" 
+            size="sm" 
+            onClick={openBookingModal}
+            className="rounded-lg"
+          >
+            {t('cta.bookNow')}
+          </Button>
+        </div>
       </div>
 
       {/* Booking Modal */}
