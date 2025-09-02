@@ -22,24 +22,24 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="max-w-6xl mx-auto container-responsive py-2">
+      <div className="max-w-6xl mx-auto container-responsive py-1">
         {/* Mobile Layout */}
-        <div className="flex md:hidden items-center justify-between">
+        <div className="flex md:hidden items-center justify-between py-1">
           {/* Logo - Left aligned on mobile */}
           <div className="flex items-center gap-2">
             <img 
               src="/lovable-uploads/e6dd464b-2ef6-448d-bfd1-275f6f65b1ed.png" 
               alt="SpyTech Student Audio Logo" 
-              className="w-8 h-8"
+              className="w-7 h-7"
             />
             <div className="text-left">
-              <h1 className="text-lg font-bold text-foreground">SpyTech</h1>
+              <h1 className="text-base font-bold text-foreground">SpyTech</h1>
               <p className="text-xs text-muted-foreground">Exam Tools</p>
             </div>
           </div>
           
           {/* Mobile Actions - Right side */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             <LanguageSelector />
             <Button 
               variant="default" 
@@ -52,9 +52,9 @@ const Header = () => {
           </div>
         </div>
         
-        {/* Mobile Navigation Menu - Collapsible */}
-        <div className="md:hidden mt-2 border-t border-border/50 pt-2">
-          <div className="flex flex-wrap justify-center gap-3">
+        {/* Mobile Navigation Menu - Compact */}
+        <div className="md:hidden mt-1 border-t border-border/30 pt-1 pb-1">
+          <div className="flex flex-wrap justify-center gap-2">
             <button 
               onClick={scrollToRentals}
               className="text-xs text-muted-foreground hover:text-foreground transition-colors py-1 px-2 rounded"
