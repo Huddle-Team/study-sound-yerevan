@@ -21,12 +21,30 @@ export interface ApiResponse {
 // Submit booking request to backend API
 export const submitBooking = async (bookingData: BookingData): Promise<ApiResponse> => {
   try {
+    // Transform frontend data to match backend expectations
+    const backendData = {
+      name: bookingData.fullName,
+      phone: bookingData.phoneNumber,
+      message: `Action: ${bookingData.selectedActionType}${
+        bookingData.productName ? `, Product: ${bookingData.productName}` : ''
+      }${
+        bookingData.selectedRentItem ? `, Rent Item: ${bookingData.selectedRentItem}` : ''
+      }${
+        bookingData.selectedSaleItem ? `, Sale Item: ${bookingData.selectedSaleItem}` : ''
+      }`,
+      selectedItems: [
+        bookingData.selectedRentItem || bookingData.selectedSaleItem || 'general-inquiry'
+      ].filter(Boolean)
+    };
+
+    console.log('Sending to backend:', backendData);
+
     const response = await fetch(`${API_BASE_URL}/booking/submit`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(bookingData),
+      body: JSON.stringify(backendData),
     });
 
     const result = await response.json();
