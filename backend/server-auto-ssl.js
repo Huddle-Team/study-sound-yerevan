@@ -98,7 +98,6 @@ app.post('/api/booking/submit', [
   body('fullName').trim().isLength({ min: 1 }).withMessage('Full name is required'),
   body('phoneNumber').trim().isLength({ min: 1 }).withMessage('Phone number is required'),
   body('selectedActionType').isIn(['rent', 'buy']).withMessage('Action type must be rent or buy'),
-  body('productName').trim().isLength({ min: 1 }).withMessage('Product name is required'),
 ], async (req, res) => {
   try {
     // Validate request
@@ -141,8 +140,14 @@ app.post('/api/booking/submit', [
 Name: ${fullName}
 Phone: ${phoneNumber}
 
-📦 **Product:** ${productName}
-🛒 **Action:** ${selectedActionType === 'rent' ? 'Rent' : 'Buy'}`;
+ **Action:** ${selectedActionType === 'rent' ? 'Rent' : 'Buy'}`;
+
+    // Add product name if provided
+    if (productName && productName.trim()) {
+      telegramMessage += `\n📦 **Product:** ${productName}`;
+    } else {
+      telegramMessage += `\n📦 **Product:** General inquiry - customer will specify`;
+    }
 
     // Add rental date/time information if it's a rental
     if (selectedActionType === 'rent' && (rentalStartDate || rentalEndDate || rentalTime)) {
