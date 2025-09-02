@@ -95,10 +95,10 @@ app.get('/api/health', (req, res) => {
 
 // Telegram webhook endpoint
 app.post('/api/booking/submit', [
-  body('name').trim().isLength({ min: 1 }).withMessage('Name is required'),
-  body('phone').trim().isLength({ min: 1 }).withMessage('Phone is required'),
-  body('message').trim().isLength({ min: 1 }).withMessage('Message is required'),
-  body('selectedItems').isArray({ min: 1 }).withMessage('At least one item must be selected'),
+  body('fullName').trim().isLength({ min: 1 }).withMessage('Full name is required'),
+  body('phoneNumber').trim().isLength({ min: 1 }).withMessage('Phone number is required'),
+  body('selectedActionType').isIn(['rent', 'buy']).withMessage('Action type must be rent or buy'),
+  body('productName').trim().isLength({ min: 1 }).withMessage('Product name is required'),
 ], async (req, res) => {
   try {
     // Validate request
@@ -112,39 +112,56 @@ app.post('/api/booking/submit', [
       });
     }
 
-    const { name, phone, message, selectedItems } = req.body;
+    const { 
+      fullName, 
+      phoneNumber, 
+      selectedActionType, 
+      selectedRentItem, 
+      selectedSaleItem, 
+      productName,
+      rentalStartDate,
+      rentalEndDate,
+      rentalTime
+    } = req.body;
     
     console.log('📋 Processing booking request:');
-    console.log('- Name:', name);
-    console.log('- Phone:', phone);
-    console.log('- Selected Items:', selectedItems.length);
+    console.log('- Name:', fullName);
+    console.log('- Phone:', phoneNumber);
+    console.log('- Action Type:', selectedActionType);
+    console.log('- Product:', productName);
+    console.log('- Selected Item ID:', selectedRentItem || selectedSaleItem);
+    if (rentalStartDate) console.log('- Rental Start:', rentalStartDate);
+    if (rentalEndDate) console.log('- Rental End:', rentalEndDate);
+    if (rentalTime) console.log('- Preferred Time:', rentalTime);
 
-    // Create enhanced message with item names
-    const itemList = selectedItems.map(itemId => {
-      const itemName = getItemName(itemId);
-      return `• ${itemName}`;
-    }).join('\n');
-
-    const telegramMessage = `🎧 New SpyTech Booking Request
+    // Build the Telegram message
+    let telegramMessage = `🎧 New SpyTech Booking Request
 
 👤 **Customer Information:**
-Name: ${name}
-Phone: ${phone}
+Name: ${fullName}
+Phone: ${phoneNumber}
 
-📦 **Selected Items:**
-${itemList}
+📦 **Product:** ${productName}
+🛒 **Action:** ${selectedActionType === 'rent' ? 'Rent' : 'Buy'}`;
 
-💬 **Message:**
-${message}
+    // Add rental date/time information if it's a rental
+    if (selectedActionType === 'rent' && (rentalStartDate || rentalEndDate || rentalTime)) {
+      telegramMessage += `\n\n� **Rental Details:**`;
+      if (rentalStartDate) telegramMessage += `\nStart Date: ${rentalStartDate}`;
+      if (rentalEndDate) telegramMessage += `\nEnd Date: ${rentalEndDate}`;
+      if (rentalTime) telegramMessage += `\nPreferred Time: ${rentalTime}`;
+    }
 
-🕒 **Time:** ${new Date().toLocaleString('en-US', { 
-  timeZone: 'Asia/Yerevan',
-  year: 'numeric',
-  month: '2-digit',
-  day: '2-digit',
-  hour: '2-digit',
-  minute: '2-digit'
-})} (Yerevan time)`;
+    telegramMessage += `\n\n🕒 **Time:** ${new Date().toLocaleString('en-US', { 
+      timeZone: 'Asia/Yerevan',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit'
+    })} (Yerevan time)`;
+
+    console.log('📧 Telegram message prepared:', telegramMessage);
 
     // Send to Telegram
     const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;

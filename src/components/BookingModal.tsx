@@ -24,7 +24,10 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
     phoneNumber: '',
     selectedActionType: actionType === 'book' ? '' : actionType === 'buy' ? 'buy' : 'rent',
     selectedRentItem: '',
-    selectedSaleItem: ''
+    selectedSaleItem: '',
+    rentalStartDate: '',
+    rentalEndDate: '',
+    rentalTime: ''
   });
   const [errors, setErrors] = useState({
     fullName: '',
@@ -142,7 +145,10 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
       selectedActionType: formData.selectedActionType as 'rent' | 'buy',
       selectedRentItem: formData.selectedRentItem || undefined,
       selectedSaleItem: formData.selectedSaleItem || undefined,
-      productName: productName
+      productName: productName,
+      rentalStartDate: formData.rentalStartDate || undefined,
+      rentalEndDate: formData.rentalEndDate || undefined,
+      rentalTime: formData.rentalTime || undefined
     };
 
     // Show loading state
@@ -175,7 +181,10 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
         phoneNumber: '', 
         selectedActionType: actionType === 'book' ? '' : actionType === 'buy' ? 'buy' : 'rent',
         selectedRentItem: '',
-        selectedSaleItem: ''
+        selectedSaleItem: '',
+        rentalStartDate: '',
+        rentalEndDate: '',
+        rentalTime: ''
       });
       setErrors({
         fullName: '',
@@ -317,6 +326,41 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
                   </SelectContent>
                 </Select>
               </div>
+            )}
+
+            {/* Show rental date/time fields for rent action or when rent is selected in book */}
+            {(actionType === 'rent' || (actionType === 'book' && formData.selectedActionType === 'rent')) && (
+              <>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="space-y-2">
+                    <Label htmlFor="rentalStartDate">Start Date</Label>
+                    <Input
+                      id="rentalStartDate"
+                      type="date"
+                      value={formData.rentalStartDate}
+                      onChange={(e) => handleInputChange('rentalStartDate', e.target.value)}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="rentalEndDate">End Date</Label>
+                    <Input
+                      id="rentalEndDate"
+                      type="date"
+                      value={formData.rentalEndDate}
+                      onChange={(e) => handleInputChange('rentalEndDate', e.target.value)}
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="rentalTime">Preferred Time</Label>
+                  <Input
+                    id="rentalTime"
+                    type="time"
+                    value={formData.rentalTime}
+                    onChange={(e) => handleInputChange('rentalTime', e.target.value)}
+                  />
+                </div>
+              </>
             )}
 
             {/* Show sale options for buy action or when buy is selected in book */}
