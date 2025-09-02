@@ -180,14 +180,14 @@
 
 /* Header spacing utilities */
 .header-spacing {
-  padding-top: 10rem; /* Increased to 10rem (160px) for mobile header */
-  min-height: calc(100vh - 10rem); /* Ensure content is visible below header */
+  padding-top: 11rem; /* Increased to 11rem (176px) for mobile header */
+  min-height: calc(100vh - 11rem); /* Ensure content is visible below header */
 }
 
 @media (min-width: 768px) {
   .header-spacing {
-    padding-top: 7rem; /* Increased to 7rem (112px) for desktop */
-    min-height: calc(100vh - 7rem);
+    padding-top: 7.5rem; /* Increased to 7.5rem (120px) for desktop */
+    min-height: calc(100vh - 7.5rem);
   }
 }
 
