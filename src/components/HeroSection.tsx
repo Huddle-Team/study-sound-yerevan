@@ -14,15 +14,15 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-secondary/30 container-responsive pt-20">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-secondary/30 container-responsive main-content">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         {/* Content */}
         <div className="hero-responsive space-y-8">
           <div className="space-y-4">
-            <h1 className="title-responsive font-bold text-foreground">
+            <h1 className="title-responsive font-bold text-foreground mobile-text-center">
               {t('hero.title')}
             </h1>
-            <p className="subtitle-responsive text-muted-foreground max-w-lg mx-auto lg:mx-0">
+            <p className="subtitle-responsive text-muted-foreground max-w-lg mx-auto lg:mx-0 mobile-text-center">
               {t('hero.subtitle')}
             </p>
           </div>

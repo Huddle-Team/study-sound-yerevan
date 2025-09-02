@@ -22,63 +22,63 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="max-w-6xl mx-auto container-responsive py-4">
+      <div className="max-w-6xl mx-auto container-responsive py-2">
         {/* Mobile Layout */}
         <div className="flex md:hidden items-center justify-between">
-          {/* Logo - Centered on mobile */}
-          <div className="flex items-center gap-3 mx-auto">
+          {/* Logo - Left aligned on mobile */}
+          <div className="flex items-center gap-2">
             <img 
               src="/lovable-uploads/e6dd464b-2ef6-448d-bfd1-275f6f65b1ed.png" 
               alt="SpyTech Student Audio Logo" 
-              className="w-10 h-10"
+              className="w-8 h-8"
             />
-            <div>
-              <h1 className="text-xl font-bold text-foreground">SpyTech</h1>
+            <div className="text-left">
+              <h1 className="text-lg font-bold text-foreground">SpyTech</h1>
               <p className="text-xs text-muted-foreground">Exam Tools</p>
             </div>
           </div>
-        </div>
-        
-        {/* Mobile Navigation Menu */}
-        <div className="md:hidden mt-4 flex flex-col gap-3">
-          <div className="flex flex-wrap justify-center gap-4 mb-3">
-            <button 
-              onClick={scrollToRentals}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors nav-responsive"
-            >
-              {t('navigation.rentals')}
-            </button>
-            <button 
-              onClick={() => document.getElementById('for-sale')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors nav-responsive"
-            >
-              {t('navigation.forSale')}
-            </button>
-            <button 
-              onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors nav-responsive"
-            >
-              FAQ
-            </button>
-            <button 
-              onClick={scrollToFooter}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors nav-responsive"
-            >
-              {t('common.contact')}
-            </button>
-          </div>
           
-          {/* Language Selector and CTA Button - Centered on mobile */}
-          <div className="flex items-center justify-center gap-3">
+          {/* Mobile Actions - Right side */}
+          <div className="flex items-center gap-2">
             <LanguageSelector />
             <Button 
               variant="default" 
               size="sm" 
               onClick={openBookingModal}
-              className="rounded-lg mobile-button-responsive"
+              className="rounded-lg mobile-button-responsive text-xs px-2 py-1"
             >
               {t('cta.bookNow')}
             </Button>
+          </div>
+        </div>
+        
+        {/* Mobile Navigation Menu - Collapsible */}
+        <div className="md:hidden mt-2 border-t border-border/50 pt-2">
+          <div className="flex flex-wrap justify-center gap-3">
+            <button 
+              onClick={scrollToRentals}
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors py-1 px-2 rounded"
+            >
+              {t('navigation.rentals')}
+            </button>
+            <button 
+              onClick={() => document.getElementById('for-sale')?.scrollIntoView({ behavior: 'smooth' })}
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors py-1 px-2 rounded"
+            >
+              {t('navigation.forSale')}
+            </button>
+            <button 
+              onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })}
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors py-1 px-2 rounded"
+            >
+              FAQ
+            </button>
+            <button 
+              onClick={scrollToFooter}
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors py-1 px-2 rounded"
+            >
+              {t('common.contact')}
+            </button>
           </div>
         </div>
 
@@ -91,7 +91,7 @@ const Header = () => {
               alt="SpyTech Student Audio Logo" 
               className="w-10 h-10"
             />
-            <div>
+            <div className="text-left">
               <h1 className="text-xl font-bold text-foreground">SpyTech</h1>
               <p className="text-xs text-muted-foreground">Exam Tools</p>
             </div>

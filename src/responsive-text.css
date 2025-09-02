@@ -352,3 +352,36 @@
     min-height: 2.25rem;
   }
 }
+
+/* Header spacing compensation to prevent content overlap */
+.main-content {
+  padding-top: 5.5rem; /* Space for mobile header */
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    padding-top: 4.5rem; /* Space for desktop header */
+  }
+}
+
+/* Ensure sections don't get covered by header */
+.section-with-header-space {
+  margin-top: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-with-header-space {
+    margin-top: 4rem;
+  }
+}
+
+/* Text alignment fixes */
+.mobile-text-center {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .mobile-text-center {
+    text-align: left;
+  }
+}
