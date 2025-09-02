@@ -1,0 +1,32 @@
+{
+  "id": 10,
+  "names": {
+    "en": "Spy Micro Camera Basic 2",
+    "ru": "Скрытая микро-камера Basic 2",
+    "hy": "Անտեսանալի միկրո կամերա Basic 2"
+  },
+  "descriptions": {
+    "en": "Micro camera for real-time recording with wireless Wi-Fi connection",
+    "ru": "Микрокамера для записи в реальном времени с беспроводным подключением по Wi-Fi.",
+    "hy": "Միկրո կամերա՝ իրական ժամանակում online հետևելու համար՝ անլար Wi-Fi կապով:"
+  },
+  "includes": {
+    "en": "Includes: micro camera, USB charger.",
+    "ru": "В комплекте: микрокамера, зарядное устройство USB.",
+    "hy": "Ներառում է՝ միկրոկամեռա, usb լիցքավորիչ։"
+  },
+  "prices": {
+    "en": "From 7,000 AMD/day",
+    "ru": "От 7,000 драм/день",
+    "hy": "Սկսած 7,000 դրամ/օր"
+  },
+  "image": "/spy-camera.jpg",
+  "features": {
+    "en": ["Ultra-compact design", "HD video recording", "Long battery life"],
+    "ru": ["Ультракомпактный дизайн", "HD видеозапись", "Долгое время автономной работы"],
+    "hy": ["Ուլտրակոմպակտ դիզայն", "HD տեսագրություն", "Երկար մարտկոցի կյանք"]
+  },
+  "icon": "Camera",
+  "category": "camera",
+  "gpsTracking": true
+}

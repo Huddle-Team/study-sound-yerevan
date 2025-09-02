@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import spyMicroCameraBasic2 from '@/data/spyMicroCameraBasic2.json';
 
 export interface RentalItem {
   id: number;
@@ -96,9 +97,9 @@ const rentalsData = {
         "hy": "Իդեալական է քննությունների համար և ոչ միայն։ Անլար միացում՝ Bluetooth-ի միջոցով՝ հաշված վայրկյաններում:"
       },
       "prices": {
-        "en": "From 30,000 AMD/day",
-        "ru": "От 30,000 драм/день",
-        "hy": "Սկսած 30,000 դրամ/օր"
+        "en": "From 5,000 AMD/day",
+        "ru": "От 5,000 драм/день",
+        "hy": "Սկսած 5,000 դրամ/օր"
       },
       "image": "/usb-headset.jpg",
       "features": {
@@ -142,9 +143,9 @@ const rentalsData = {
     {
       "id": 5,
       "names": {
-        "en": "Spy Micro Camera Basic",
-        "ru": "Скрытая микро-камера Basic",
-        "hy": "Անտեսանալի միկրո կամերա Basic"
+        "en": "Spy Micro Camera Basic 1",
+        "ru": "Скрытая микро-камера Basic 1",
+        "hy": "Անտեսանալի միկրո կամերա Basic 1"
       },
       "descriptions": {
         "en": "Professional photography for projects and assignments.",
@@ -154,7 +155,7 @@ const rentalsData = {
       "prices": {
         "en": "From 4,500 AMD/day",
         "ru": "От 4,500 драм/день",
-        "hy": "Սկսած 4,500 դրամ/օր"
+        "hy": "Սկսած 4,00 դրամ/օր"
       },
       "image": "/spy-camera.jpg",
       "features": {
@@ -213,33 +214,6 @@ const rentalsData = {
         "en": ["1080p resolution", "Auto-focus", "Built-in microphone"],
         "ru": ["1080p разрешение", "Автофокус", "Встроенный микрофон"],
         "hy": ["1080p թույլտվություն", "Ինքնակենտրոնացում", "Ներկառուցված բարձրախոս"]
-      },
-      "icon": "Camera",
-      "category": "camera",
-      "gpsTracking": true
-    },
-    {
-      "id": 10,
-      "names": {
-        "en": "Spy Micro Camera Basic",
-        "ru": "Скрытая микро-камера Basic",
-        "hy": "Անտեսանալի միկրո կամերա Basic"
-      },
-      "descriptions": {
-        "en": "Micro camera for real-time recording with wireless Wi-Fi connection. Includes: micro camera, USB charger.",
-        "ru": "Микрокамера для записи в реальном времени с беспроводным подключением по Wi-Fi. В комплекте: микрокамера, зарядное устройство USB.",
-        "hy": "Միկրո կամերա՝ իրական ժամանակում online հետևելու համար՝ անլար Wi-Fi կապով: Ներառում է՝ միկրոկամեռա, usb լիցքավորիչ։"
-      },
-      "prices": {
-        "en": "From 7,000 AMD/day",
-        "ru": "От 7,000 драм/день",
-        "hy": "Սկսած 7,000 դրամ/օր"
-      },
-      "image": "/spy-camera.jpg",
-      "features": {
-        "en": ["Ultra-compact design", "HD video recording", "Long battery life", "Memory card included"],
-        "ru": ["Ультракомпактный дизайн", "HD видеозапись", "Долгое время автономной работы", "Карта памяти включена"],
-        "hy": ["Ուլտրակոմպակտ դիզայն", "HD տեսագրություն", "Երկար մարտկոցի կյանք", "Հիշողության քարտ ներառված"]
       },
       "icon": "Camera",
       "category": "camera",
@@ -618,7 +592,7 @@ export const useProductData = () => {
     // Load and categorize rentals
     const categorizedRentals = {
       audio: rentalsData.audioRentals,
-      camera: rentalsData.cameraRentals,
+      camera: [...rentalsData.cameraRentals, spyMicroCameraBasic2],
       gps: rentalsData.gpsRentals,
     };
     setRentals(categorizedRentals);

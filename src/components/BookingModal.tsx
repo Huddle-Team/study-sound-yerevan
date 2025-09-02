@@ -26,8 +26,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
     selectedRentItem: '',
     selectedSaleItem: '',
     rentalStartDate: '',
-    rentalEndDate: '',
-    rentalTime: ''
+    rentalEndDate: ''
   });
   const [errors, setErrors] = useState({
     fullName: '',
@@ -147,8 +146,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
       selectedSaleItem: formData.selectedSaleItem || undefined,
       productName: productName,
       rentalStartDate: formData.rentalStartDate || undefined,
-      rentalEndDate: formData.rentalEndDate || undefined,
-      rentalTime: formData.rentalTime || undefined
+      rentalEndDate: formData.rentalEndDate || undefined
     };
 
     // Show loading state
@@ -183,8 +181,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
         selectedRentItem: '',
         selectedSaleItem: '',
         rentalStartDate: '',
-        rentalEndDate: '',
-        rentalTime: ''
+        rentalEndDate: ''
       });
       setErrors({
         fullName: '',
@@ -350,15 +347,6 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
                       onChange={(e) => handleInputChange('rentalEndDate', e.target.value)}
                     />
                   </div>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="rentalTime">Preferred Time</Label>
-                  <Input
-                    id="rentalTime"
-                    type="time"
-                    value={formData.rentalTime}
-                    onChange={(e) => handleInputChange('rentalTime', e.target.value)}
-                  />
                 </div>
               </>
             )}

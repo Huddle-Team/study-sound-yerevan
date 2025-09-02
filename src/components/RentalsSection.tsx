@@ -8,6 +8,7 @@ import { useGPS } from "@/contexts/GPSContext";
 import { toast } from "sonner";
 import BookingModal from "./BookingModal";
 import { useState } from "react";
+import spyMicroCameraBasic2 from "@/data/spyMicroCameraBasic2.json";
 
 const iconMap = {
   Headphones,
@@ -23,7 +24,7 @@ const iconMap = {
 };
 
 const RentalsSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { rentals } = useProductData();
   const { getCurrentLocation, addTracking } = useGPS();
   const [modalOpen, setModalOpen] = useState(false);
@@ -64,7 +65,7 @@ const RentalsSection = () => {
     const IconComponent = iconMap[rental.icon as keyof typeof iconMap] || Package;
     
     return (
-      <Card key={rental.id} className="overflow-hidden hover:shadow-lg transition-all duration-300 border-0 shadow-md">
+      <Card key={rental.id} className="overflow-hidden hover:shadow-lg transition-all duration-300 border-0 shadow-md h-full flex flex-col">
         <CardHeader className="p-0">
           <div className="relative">
             {hasImage && rental.image ? (
@@ -84,7 +85,7 @@ const RentalsSection = () => {
           </div>
         </CardHeader>
         
-        <CardContent className="p-6">
+        <CardContent className="p-6 flex-grow">
           <CardTitle className="text-xl mb-2 text-foreground">{rental.name}</CardTitle>
           <p className="text-muted-foreground mb-4">{rental.description}</p>
           
@@ -98,11 +99,14 @@ const RentalsSection = () => {
           </div>
         </CardContent>
         
-        <CardFooter className="p-6 pt-0">
+        <CardFooter className="p-6 pt-0 mt-auto">
           <div className="w-full">
             <div className="text-2xl font-bold text-primary mb-2">{rental.price}</div>
             <p className="text-xs text-muted-foreground mb-3">
-              {t('common.includes')}
+              {rental.id === 10 
+                ? spyMicroCameraBasic2.includes[language] || spyMicroCameraBasic2.includes.en
+                : t('common.includes')
+              }
             </p>
             <Button 
               onClick={() => handleRentClick(rental)}

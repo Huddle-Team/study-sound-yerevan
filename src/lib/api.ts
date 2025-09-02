@@ -10,7 +10,6 @@ export interface BookingData {
   productName?: string;
   rentalStartDate?: string;
   rentalEndDate?: string;
-  rentalTime?: string;
 }
 
 export interface ApiResponse {
