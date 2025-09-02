@@ -180,25 +180,25 @@
 
 /* Header spacing utilities */
 .header-spacing {
-  padding-top: 11rem; /* Increased to 11rem (176px) for mobile header */
-  min-height: calc(100vh - 11rem); /* Ensure content is visible below header */
+  margin-top: 60px; /* Fixed 60px margin as requested */
+  min-height: calc(100vh - 60px); /* Ensure content is visible below header */
 }
 
 @media (min-width: 768px) {
   .header-spacing {
-    padding-top: 7.5rem; /* Increased to 7.5rem (120px) for desktop */
-    min-height: calc(100vh - 7.5rem);
+    margin-top: 60px; /* Keep 60px for desktop as well */
+    min-height: calc(100vh - 60px);
   }
 }
 
 /* Emergency clearance class for content that must be visible */
 .clear-header {
-  margin-top: 2rem; /* Additional margin for extra clearance */
+  margin-top: 1rem; /* Additional margin for mobile clearance */
 }
 
 @media (min-width: 768px) {
   .clear-header {
-    margin-top: 1rem; /* Less margin needed on desktop */
+    margin-top: 0.5rem; /* Less margin for desktop */
   }
 }
 
