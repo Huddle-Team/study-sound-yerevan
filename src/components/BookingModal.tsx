@@ -298,7 +298,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
               <div className="space-y-2">
                 <Label htmlFor="actionType">{t('modal.actionType')}</Label>
                 <Select value={formData.selectedActionType} onValueChange={(value) => handleInputChange('selectedActionType', value)}>
-                  <SelectTrigger>
+                  <SelectTrigger id="actionType">
                     <SelectValue placeholder={t('modal.actionTypePlaceholder')} />
                   </SelectTrigger>
                   <SelectContent>
@@ -314,7 +314,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
               <div className="space-y-2">
                 <Label htmlFor="rentVariant">{t('modal.rentVariant')}</Label>
                 <Select value={formData.selectedRentItem} onValueChange={(value) => handleInputChange('selectedRentItem', value)}>
-                  <SelectTrigger>
+                  <SelectTrigger id="rentVariant">
                     <SelectValue placeholder={t('modal.rentVariantPlaceholder')} />
                   </SelectTrigger>
                   <SelectContent>
@@ -368,7 +368,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, actionType
               <div className="space-y-2">
                 <Label htmlFor="saleItem">{t('modal.saleItem')}</Label>
                 <Select value={formData.selectedSaleItem} onValueChange={(value) => handleInputChange('selectedSaleItem', value)}>
-                  <SelectTrigger>
+                  <SelectTrigger id="saleItem">
                     <SelectValue placeholder={t('modal.saleItemPlaceholder')} />
                   </SelectTrigger>
                   <SelectContent>
