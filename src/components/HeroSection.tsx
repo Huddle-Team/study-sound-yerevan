@@ -21,7 +21,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className={`min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-secondary/30 px-6 header-spacing ${getLanguageClass()}`}>
+    <section className={`min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-secondary/30 px-6 header-spacing clear-header ${getLanguageClass()}`}>
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         {/* Content */}
         <div className="text-center lg:text-left space-y-8">

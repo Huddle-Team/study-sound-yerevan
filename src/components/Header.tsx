@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border ${getLanguageClass()}`}>
-      <div className="max-w-6xl mx-auto px-6 py-4">
+      <div className="max-w-6xl mx-auto px-6 py-3 md:py-4">
         {/* Desktop Layout */}
         <div className="hidden md:flex items-center justify-between">
           {/* Logo */}
@@ -90,22 +90,22 @@ const Header = () => {
         {/* Mobile Layout */}
         <div className="md:hidden">
           {/* Mobile Header */}
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between mb-2">
             {/* Logo */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <img 
                 src="/lovable-uploads/e6dd464b-2ef6-448d-bfd1-275f6f65b1ed.png" 
                 alt="SpyTech Student Audio Logo" 
-                className="w-8 h-8"
+                className="w-7 h-7"
               />
               <div>
-                <h1 className="text-lg font-bold text-foreground">SpyTech</h1>
+                <h1 className="text-base font-bold text-foreground">SpyTech</h1>
                 <p className="text-xs text-muted-foreground">Exam Tools</p>
               </div>
             </div>
 
             {/* Mobile Actions */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
               <LanguageSelector />
               <Button 
                 variant="default" 
@@ -119,28 +119,28 @@ const Header = () => {
           </div>
 
           {/* Mobile Navigation */}
-          <nav className="flex flex-wrap justify-center gap-4 pb-2">
+          <nav className="flex flex-wrap justify-center gap-2 pb-1">
             <button 
               onClick={scrollToRentals}
-              className="nav-responsive text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded"
+              className="nav-responsive text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded text-xs"
             >
               {t('navigation.rentals')}
             </button>
             <button 
               onClick={() => document.getElementById('for-sale')?.scrollIntoView({ behavior: 'smooth' })}
-              className="nav-responsive text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded"
+              className="nav-responsive text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded text-xs"
             >
               {t('navigation.forSale')}
             </button>
             <button 
               onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })}
-              className="nav-responsive text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded"
+              className="nav-responsive text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded text-xs"
             >
               FAQ
             </button>
             <button 
               onClick={scrollToFooter}
-              className="nav-responsive text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded"
+              className="nav-responsive text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded text-xs"
             >
               {t('common.contact')}
             </button>
