@@ -2,11 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
-    if (selectedActionType === 'rent' && (rentalStartDate || rentalEndDate)) {
-      telegramMessage += `\n\n📅 **Rental Details:**`;
-      if (rentalStartDate) telegramMessage += `\nStart Date: ${rentalStartDate}`;
-      if (rentalEndDate) telegramMessage += `\nEnd Date: ${rentalEndDate}`;
-    }{ body, validationResult } = require('express-validator');
+const { body, validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
