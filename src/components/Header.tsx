@@ -127,7 +127,7 @@ const Header = () => {
 
           {/* Mobile Menu Overlay */}
           {mobileMenuOpen && (
-            <div className="fixed top-0 left-0 right-0 bottom-0 bg-white/100 backdrop-blur-none z-40 animate-in fade-in duration-300" style={{backgroundColor: '#ffffff'}}>
+            <div className="fixed top-0 left-0 right-0 bottom-0 bg-white z-40 animate-in fade-in duration-300">
               {/* Close Button */}
               <div className="absolute top-4 right-6 z-50">
                 <button
